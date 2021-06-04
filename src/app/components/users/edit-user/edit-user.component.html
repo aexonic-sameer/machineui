@@ -1,0 +1,104 @@
+<div class="container" style="margin-top: 4rem;">
+<form #edituserform="ngForm">
+    <div class="row card_style">
+        <div class="col-md-12 col-lg-12  col-sm-12 col-xlg-12">
+                <h3 class="box-title text-center" style="margin-bottom: 2px;">
+                    <span class="login_heading">Fill the basic details of User</span>
+                </h3>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6  col-sm-6 col-xlg-6">
+                        <div class=" little-profile m-b-10">
+                            <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>First Name</h6>
+                            <input type="text" class="form-control" placeholder="Enter first name"
+                                [(ngModel)]="userfirstName" pattern="[a-zA-Z][a-zA-Z ]+" name="firstName" required
+                                #firstName="ngModel" id="firstName">
+                                <div class="input-group m-t-5 m-b-5">
+                                    <div [hidden]="firstName.valid || firstName.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                        <div style="font-size: 13px;" [hidden]="!firstName.hasError('required')"><i class="fa fa-info-circle"></i> User name is required
+                                        </div>
+                                        <div style="font-size: 13px;" [hidden]="!firstName.hasError('pattern')"><i class="fa fa-info-circle"></i> Please enter valid Name
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-6 col-lg-6  col-sm-6 col-xlg-6">
+                        <div class=" little-profile m-b-10">
+                            <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Last name</h6>
+                            <input type="text" class="form-control" placeholder="Enter last name"
+                                [(ngModel)]="userlastname" pattern="[a-zA-Z][a-zA-Z ]+" name="lastname" required
+                                #lastname="ngModel" id="lastname">
+                                <div class="input-group m-t-5 m-b-5">
+                                    <div [hidden]="lastname.valid || lastname.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                        <div style="font-size: 13px;" [hidden]="!lastname.hasError('required')"><i class="fa fa-info-circle"></i> Last name is required
+                                        </div>
+                                        <div style="font-size: 13px;" [hidden]="!lastname.hasError('pattern')"><i class="fa fa-info-circle"></i> Please enter valid name
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6  col-sm-6 col-xlg-6">
+                        <div class=" little-profile m-b-10">
+                            <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Job Title</h6>
+                            <input type="text" class="form-control" placeholder="Enter job title"
+                                [(ngModel)]="userJobTitle" pattern="[a-zA-Z][a-zA-Z ]+" name="jobtitle" required
+                                #jobtitle="ngModel" id="jobtitle">
+                                <div class="input-group m-t-5 m-b-5">
+                                    <div [hidden]="jobtitle.valid || jobtitle.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                        <div style="font-size: 13px;" [hidden]="!jobtitle.hasError('required')"><i class="fa fa-info-circle"></i> Job title is required
+                                        </div>
+                                        <div style="font-size: 13px;" [hidden]="!jobtitle.hasError('pattern')"><i class="fa fa-info-circle"></i> Please enter valid job title
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-6 col-lg-6  col-sm-6 col-xlg-6">
+                        <div class=" little-profile m-b-10">
+                            <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Email ID</h6>
+                            <input type="text" class="form-control" placeholder="Enter email address"
+                                [(ngModel)]="userEmail" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" name="email" required
+                                #email="ngModel" id="email" disabled>
+                                <div class="input-group m-t-5 m-b-5">
+                                    <div [hidden]="email.valid || email.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                        <div style="font-size: 13px;" [hidden]="!email.hasError('required')"><i class="fa fa-info-circle"></i> Email is required
+                                        </div>
+                                        <div style="font-size: 13px;" [hidden]="!email.hasError('pattern')"><i class="fa fa-info-circle"></i> Please enter valid email address
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6  col-sm-6 col-xlg-6">
+                        <div class=" little-profile m-b-10">
+                            <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Mobile Number</h6>
+                            <input type="text" class="form-control" placeholder="Enter mobile number"
+                                [(ngModel)]="userMobileNumber" pattern="[0-9]*" name="mobnumber" required
+                                #mobnumber="ngModel" id="mobnumber" max="10">
+                                <div class="input-group m-t-5 m-b-5">
+                                    <div [hidden]="mobnumber.valid || mobnumber.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                        <div style="font-size: 13px;" [hidden]="!mobnumber.hasError('required')"><i class="fa fa-info-circle"></i> Mobile is required
+                                        </div>
+                                        <div style="font-size: 13px;" [hidden]="!mobnumber.hasError('pattern')"><i class="fa fa-info-circle"></i> Please enter valid mobile number
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-lg-12 m-b-20 d-flex justify-content-center">
+                        <button (click)="backButton()" class="btn btn-danger m-l-20"><i class="fa fa-times mr-2"></i>cancel</button>
+                        <button  (click)="updateuserdetails()" [disabled]="!edituserform.valid" class="btn btn-light m-l-20"><i class="fa fa-save mr-2"></i>Update</button>
+                         </div>
+                  </div>
+        </div>
+    </div>
+    <!-- ==============================[default previous code]======================== -->
+</form>
+</div>
+

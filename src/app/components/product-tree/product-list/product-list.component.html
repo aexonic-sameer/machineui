@@ -1,0 +1,183 @@
+
+
+<div class="backgroundLightGray">
+    <div class="row paddingCustom">
+        <div class="col-md-1 col-lg-1  col-sm-1 col-xlg-1">
+          <div class="flexcontenersideBar">
+                <app-side-menu></app-side-menu>
+          </div>
+        </div>
+        <div class="col-md-11 col-lg-11  col-sm-11 col-xlg-11">
+          <div class="flexcontener backgroundColorWhite">
+             
+<!-- New code -->
+            <div class="row">
+                <div class="col-md-12 col-lg-12" style="padding: 22px 22px 6px 42px;">
+                    <span>
+                    <strong class="custom_title">Products</strong>
+                    </span>
+                    <span>
+                        <button (click)="addNewProduct();" class="customButtonHeight btn btn-light mr-3 pull-right" placement="bottom" ngbTooltip="Click to add new product"><i class="fa fa-plus mr-2"></i>New</button>
+                    </span>
+                </div>
+                <hr>
+            <div class="col-12">
+            
+                <div class="card">
+                    <div class="card-body">
+                    
+                    
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="tableHeadingStyle">
+                                        <th class="th_top">ID</th>
+                                        <th class="th_top">Name</th>
+                                        <th class="th_top">Code</th>
+                                        <th class="th_top">Image</th>
+                                        <th class="th_top">Action</th>
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cursor_pointer">1</td>
+                                        <td class="cursor_pointer">Tuna Pouch</td>
+                                        <td class="cursor_pointer">123</td>
+                                        <td class="cursor_pointer">
+                                            <img src="assets/images/productimg/product1.PNG"    class="productImagstyle" alt="productImg"/>
+                                        </td>
+                                        <td class="cursor_pointer">
+                                            <samp style="cursor: pointer;">
+                                                <a placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
+                                            </samp>
+                                            <samp style="cursor: pointer;">
+                                                <a placement="bottom" ngbTooltip="Edit Details">
+                                                    <i class="fa fa-edit" (click)="editProductFunction();" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
+                                                </a>
+                                            </samp>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cursor_pointer">2</td>
+                                        <td class="cursor_pointer">Soup Pouch</td>
+                                        <td class="cursor_pointer">456</td>
+                                        <td class="cursor_pointer">
+                                            <img src="assets/images/productimg/product2.PNG"    class="productImagstyle" alt="productImg"/>
+                                        </td>
+                                        <td class="cursor_pointer">
+                                            <samp style="cursor: pointer;">
+                                                <a  placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
+                                            </samp>
+                                            <samp style="cursor: pointer;">
+                                                <a  placement="bottom" ngbTooltip="Edit Details">
+                                                    <i class="fa fa-edit" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
+                                                </a>
+                                            </samp>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cursor_pointer">
+                                        3   </td>
+                                        <td class="cursor_pointer">protein Pouch</td>
+                                        <td class="cursor_pointer">789</td>
+                                        <td class="cursor_pointer">
+                                            <img src="assets/images/productimg/product3.PNG"    class="productImagstyle" alt="productImg"/>
+                                        </td>
+                                        <td class="cursor_pointer">
+                                            <samp style="cursor: pointer;">
+                                                <a placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
+                                            </samp>
+                                            <samp style="cursor: pointer;">
+                                                <a  placement="bottom" ngbTooltip="Edit Details">
+                                                    <i class="fa fa-edit" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
+                                                </a>
+                                            </samp>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="cursor_pointer">
+                                    4   </td>
+                                        <td class="cursor_pointer">Pill Pouch</td>
+                                        <td class="cursor_pointer">453</td>
+                                        <td class="cursor_pointer">
+                                            <img src="assets/images/productimg/product5.PNG"    class="productImagstyle" alt="productImg"/>
+                                        </td>
+                                        <td class="cursor_pointer">
+                                            <samp style="cursor: pointer;">
+                                                <a placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
+                                            </samp>
+                                            <samp style="cursor: pointer;">
+                                                <a  placement="bottom" ngbTooltip="Edit Details">
+                                                    <i class="fa fa-edit" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
+                                                </a>
+                                            </samp>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cursor_pointer">
+                                        5   </td>
+                                        <td class="cursor_pointer">Tea Pouch</td>
+                                        <td class="cursor_pointer">345</td>
+                                        <td class="cursor_pointer">
+                                            <img src="assets/images/productimg/product4.PNG"    class="productImagstyle" alt="productImg"/>
+                                        </td>
+                                        <td class="cursor_pointer">
+                                            <samp style="cursor: pointer;">
+                                                <a placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
+                                            </samp>
+                                            <samp style="cursor: pointer;">
+                                                <a  placement="bottom" ngbTooltip="Edit Details">
+                                                    <i class="fa fa-edit" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
+                                                </a>
+                                            </samp>
+                                        </td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            </div>
+
+<!-- new code end -->
+
+          </div>
+          </div>
+  
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

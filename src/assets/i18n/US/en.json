@@ -1,0 +1,14 @@
+{
+    "userdetails": {
+        "userName": "User Name",
+        "Home": "Home",  
+        "MyProfile" :  "My Profile",
+        "ManageUser" : "Manage User",
+        "Logout" :  "Logout",
+        "welcome": "Welcome",
+        "AllRightsReserved":"All Rights Reserved.",
+        "FillTheBasicDetailsOfUser" : "Fill the basic details of User",
+        "firstName" : "first Name",
+        "lastname":"last Name"
+    }
+}

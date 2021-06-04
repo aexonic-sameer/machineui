@@ -1,0 +1,14 @@
+{
+    "userdetails": {
+        "userName": "उपयोगकर्ता नाम",
+        "Home": "घर",  
+        "MyProfile" :  "मेरी प्रोफाइल",
+        "ManageUser" : "उपयोगकर्ता प्रबंधित करें",
+        "Logout" :  "लॉग आउट करें",
+        "welcome": "स्वागत हे",
+        "AllRightsReserved":"सर्वाधिकार सुरक्षित।",
+        "FillTheBasicDetailsOfUser" : "उपयोगकर्ता का मूल विवरण भरें",
+        "firstName" : "नाम",
+        "lastname":"अंतिम नाम"
+    }
+}

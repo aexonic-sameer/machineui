@@ -1,0 +1,260 @@
+.customButtonHeight{
+    line-height: 15px;
+}
+
+.flexcontenersideBar{
+    margin-top: 70px;
+}
+.flexcontener{
+    margin-top: 70px;
+   
+   
+}
+.custom_title{
+    font-weight: 600;
+    font-size: 18px;
+}
+.tableHeadingStyle{
+    background-color: grey;
+    color: #fff;
+    line-height: 14px;
+}
+.productImagstyle{
+    width: 57px;
+    height: auto;
+}
+
+.parantFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width:100%;
+}
+
+.flexcontenerNew{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 23px;
+    margin: 15px;
+    flex-direction: column;
+    cursor: pointer !important;
+    color: #ffff;
+}
+
+.input-box-text-style{
+    line-height: 2;
+    font-size: 14px;
+    color: #455a64;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.input_BOX{
+    padding: 2px 5px;
+   
+    width: 100%;
+    border-radius: 0.25rem;
+    border: 1px solid #455a64;
+}
+.rotationDirectionInputBox{
+    padding: 2px 5px;
+    width: 100%;
+    border-radius: 0.25rem;
+    border: none;
+    text-align: center;
+}
+tr{
+    line-height: 1;
+    font-weight: 400;
+    font-size: 14px;
+}
+.parantFlexSummary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width:100%;
+}
+.flexcontenerSummary{
+    padding: 40px;
+    border-radius: 23px;
+    margin: 50px;
+    flex-direction: column;
+    width: 400px;
+    margin-top: 15vh;
+    cursor: pointer !important;
+    color: #ffff;
+}
+
+.customBackground{
+    background-color:gray;
+    color:#fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+.custom_border_top{
+    border-top: 2px solid gray;
+}
+.paddingCustom{
+    padding: 1px 22px 1px 6px;
+}
+.backgroundLightGray{
+    background-color: #ebebeb73;
+}
+.backgroundColorWhite{
+    background-color: #fff;
+}
+.ngxImageZoomThumbnail{
+    width: 100%;
+    height: auto;
+}
+
+.settingNav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff!important;
+    padding: 1rem!important;
+}
+.customBoxShadow{
+    /* border: 1px solid #dee2e6!important; */
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #ffffff;
+    background-color: gray;
+    font-weight: 600;
+}
+a {
+    color: gray;
+    font-weight: 500;
+}
+label{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+}
+.screenSaverDelay{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.displayBrightness{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 14px 0px;
+}
+.upDownIconStayle{
+    font-size: 38px;
+    background-color: gray;
+    color: #fff;
+    padding: 1px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.customBackgroundColor{
+    background-color: #2d6875;
+}
+.headersStyle{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+.m_18{
+    margin-top: 18px;
+}
+.m_b_0{
+    margin-bottom: 0px;
+}
+.customTd{
+    background-color: #f3f1f1;
+    font-weight: 600;
+}
+.custom_border {
+    border-color: #aba5a5;
+}
+
+.table th, .table td {
+    padding: 1rem;
+    vertical-align: baseline;
+    border-top: 1px solid #dee2e6;
+}
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+.conveyorControlth{
+    font-size: 18px;
+    background-color: #f6f6f6;
+}
+.conveyorControltd{
+    font-size: 16px;
+    background-color: #f6f6f6;
+    font-weight: 400;
+}
+.backupStorageBtn{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.m_top_18{
+    margin-top: 18px;
+}
+.p_15{
+    padding: 15px;
+}
+.backupStorageBtnStyle{
+    font-size: 18px;
+    font-weight: 600;
+    background-color: gray;
+    border: none;
+    color: #fff;
+}
+.EnggheadingStyle{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.m_b_8{
+    margin-bottom: 8px;
+}
+.customRowPading{
+    padding: 5px 40px 5px 40px;
+}
+.btn-states{
+    background-color: green;
+    border-color: green;
+    padding: 8px 20px;
+    line-height: 13px;
+    font-weight: 700;
+    border-radius: 4px;
+    font-size: 75%;
+    text-align: center;
+    color: #fff;
+    
+}
+.btn-danger-states {
+    background-color: red;
+    border-color: red;
+    padding: 8px 20px;
+    line-height: 13px;
+    font-weight: 700;
+    border-radius: 4px;
+    font-size: 75%;
+    text-align: center;
+    color: #fff;
+    text-align: center;
+}

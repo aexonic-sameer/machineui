@@ -1,0 +1,35 @@
+.customButtonHeight{
+    line-height: 15px;
+}
+
+.flexcontenersideBar{
+    margin-top: 70px;
+}
+.flexcontener{
+    margin-top: 70px;
+    height: 89vh;
+    box-shadow: 0 0px 2px rgb(0 0 0 / 62%);
+}
+.custom_title{
+    font-weight: 600;
+    font-size: 18px;
+}
+.tableHeadingStyle{
+    background-color: grey;
+    color: #fff;
+    line-height: 14px;
+}
+.productImagstyle{
+    width: 57px;
+    height: auto;
+}
+
+.paddingCustom{
+    padding: 1px 22px 1px 6px;
+}
+.backgroundLightGray{
+    background-color: #ebebeb73;
+}
+.backgroundColorWhite{
+    background-color: #fff;
+}

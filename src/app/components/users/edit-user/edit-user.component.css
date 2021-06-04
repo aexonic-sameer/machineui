@@ -1,0 +1,28 @@
+.card_style{
+    margin: 20px 158px;
+    padding: 32px 48px;
+    border: 2px solid #e9ecef
+}
+.input_BOX{
+    padding: 2px 5px;
+    font-size: 15px;
+    width: 100%;
+}
+.input-box-text-style{
+    line-height: 22px;
+    font-size: 12px;
+    color: #717171;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+
+
+@media (max-width: 1200px) {
+    .card_style{
+        padding: 32px 12px;
+        border: 2px solid #e9ecef;
+        margin: 5px 5px;
+    
+    }
+  }

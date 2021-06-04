@@ -1,0 +1,464 @@
+
+
+
+<div class="backgroundLightGray" style="height: 100vh;">
+    <div class="row paddingCustom">
+        <div class="col-md-1 col-lg-1  col-sm-1 col-xlg-1">
+            <div class="flexcontenersideBar">
+                <app-side-menu></app-side-menu>
+            </div>
+        </div>
+        <div class="col-md-11 col-lg-11  col-sm-11 col-xlg-11">
+            <div class="flexcontener">
+        <!-- New code -->
+
+        <div class="row ">
+            <div class="col-md-12 col-lg-12  col-sm-12 col-xlg-12">
+                <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills settingNav customBoxShadow">
+                    <li [ngbNavItem]="1">
+                      <a ngbNavLink>Product Info</a>
+                      <ng-template ngbNavContent>
+                        <div class="m-t-20 ">
+                            <div class="card customBoxShadow" style="height: 59vh;">
+                                <div class="card-body" style="margin-bottom: 3rem;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                            <div class="row">
+                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                </div>
+                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5" style="border-right: 5px solid gray;">
+                                                <div >
+                                                <div class="row" style="margin-top: 20px;">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="productNumber">Product Number</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control" value="001" name="productNumber">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="productName">Product Name</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control" value="Tuna Pouch" name="productName">
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="productCode">Product Code</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control" value="705" name="productCode">
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center" style="margin-top: 20px;">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6" style="display: flex;
+                                                        flex-direction: row;
+                                                        flex-wrap: nowrap;
+                                                        justify-content: space-around;
+                                                        align-items: center;
+                                                        align-content: center;">
+                                                            <button  class="btn btn-success ProductImageStyle" >Select Image</button>
+                                                        <button  class="btn btn-danger ProductImageStyle">Delete Image</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center" style="flex-direction:column">
+                                                            
+                                                            <span class="imgPreview">
+                                                               
+                                                            <img src="assets/images/productimg/product1.PNG" class="productImagstyle" alt="productImg"/>
+                                                          </span>
+                                                          <label style="font-size: 20px; margin-top: 14px;">Image Preview</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                      <a ngbNavLink>Basic Setup</a>
+                      <ng-template ngbNavContent>
+                        <div class="m-t-20 ">
+                            <div class="card customBoxShadow" style="height: 59vh;">
+                                <div class="card-body" style="margin-bottom: 1rem;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                            <div class="row">
+                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                </div>
+
+                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5" >
+
+                                                <div >
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="productLen">Product length</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="120" name="productLen">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="startTime">Inspection Belt Speed</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="25" name="communicationStnd">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="format">Rejector Belt Speed </label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control"  value="25" name="baudrate">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="screenSaverDelay">Tube Voltage</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="20" name="Parity">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Tube Current </label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control"  value="15" name="stopBit">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Consecutive failure</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="Enabled" name="dataBit">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Consecutive Variable</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="5" name="terminate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5" style="border-left: 5px solid gray;">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="productLen">Minimum Seal width Top </label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="0.25" name="productLen">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="startTime">Maximum Seal width Top </label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="0.25" name="communicationStnd">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="format">Minimum Seal width Bottom </label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control"  value="0.25" name="baudrate">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="screenSaverDelay">Maximum Seal Width Bottom</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="0.25" name="Parity">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Minimum Seal width Right Side</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control"  value="0.25" name="stopBit">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Maximim Seal width Right Side</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="0.25" name="dataBit">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Minimum Seal width Left Side</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="0.25" name="terminate">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Maximum Seal width Left Side</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" value="0.25" name="terminate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="3">
+                      <a ngbNavLink>Digitals Outputs</a>
+                      <ng-template ngbNavContent>
+                        <div class="m-t-20 ">
+                            <div class="card customBoxShadow" style="height: 70vh;">
+                                <div class="card-body" style="margin-bottom: 1rem;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                            <div class="row">
+                                                <div class="col-md-2 col-lg-2 col-sm-12 col-xlg-2">
+                                                </div>
+
+                                                <div class="col-md-8 col-lg-8 col-sm-12 col-xlg-8">
+
+                                                    <div class="">
+                                                        <table class="table table-bordered ">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="conveyorControlth" ></th>
+                                                                    <th class="text-center conveyorControlth">Stop</th>
+                                                                    <th class="text-center conveyorControlth">D01</th>
+                                                                    <th class="conveyorControlth" >D02</th>
+                                                                    <th class="text-center conveyorControlth">D03</th>
+                                                                    <th class="text-center conveyorControlth">D04</th>
+                                                                    <th class="conveyorControlth" >D05</th>
+                                                                    <th class="text-center conveyorControlth">D06</th>
+                                                                    <th class="text-center conveyorControlth">D07</th>
+                                                                    <th class="text-center conveyorControlth">D08</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr >
+                                                                    <td class="conveyorControltd">XRAY ON</td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td class="conveyorControltd">Error</td>
+                                                                    <td class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td class="conveyorControlth" > </td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td class="conveyorControltd">E-Stop</td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td class="conveyorControltd">Conveyor Running</td>
+                                                                    <td class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td class="conveyorControlth" > </td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td class="conveyorControltd">Seal Defect</td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td class="text-center fontweight">  <span class="dot"></span></td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                    <td > </td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td class="conveyorControltd">Foreign Material Defect</td>
+                                                                    <td class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth text-center"> <span class="dot"></span> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td  class="conveyorControlth"> </td>
+                                                                    <td class="conveyorControlth" > </td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td class="conveyorControltd" style="line-height: 0;">Delat Time[s]</td>
+                                                                    <td class="text-center fontweight"> 0.00</td>
+                                                                    <td class="text-center fontweight"> 0.00</td>
+                                                                    <td class="text-center fontweight"> 0.00</td>
+                                                                    <td class="text-center fontweight"> 0.00</td>
+                                                                    <td class="text-center fontweight"> 0.00</td>
+                                                                    <td class="text-center fontweight" > 0.00</td>
+                                                                    <td class="text-center fontweight"> 0.00 </td>
+                                                                    <td class="text-center fontweight" > 0.00</td>
+                                                                    <td class="text-center fontweight"> 0.00</td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td class="conveyorControltd " style="line-height: 0;">Hold Time[s]</td>
+                                                                    <td class="text-center fontweight"> 1.00</td>
+                                                                    <td class="text-center fontweight"> 1.00</td>
+                                                                    <td class="text-center fontweight"> 1.00</td>
+                                                                    <td class="text-center fontweight"> 1.00</td>
+                                                                    <td class="text-center fontweight"> 1.00</td>
+                                                                    <td class="text-center fontweight"> 1.00</td>
+                                                                    <td class="text-center fontweight"> 1.00 </td>
+                                                                    <td class="text-center fontweight"> 1.00</td>
+                                                                    <td class="text-center fontweight"> 1.00</td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td class="conveyorControltd" style="line-height: 0;">Polarity</td>
+                                                                    <td class="text-center fontweight"> +</td>
+                                                                    <td class="text-center fontweight"> +</td>
+                                                                    <td class="text-center fontweight"> +</td>
+                                                                    <td class="text-center fontweight"> +</td>
+                                                                    <td class="text-center fontweight"> +</td>
+                                                                    <td class="text-center fontweight"> +</td>
+                                                                    <td class="text-center fontweight"> +</td>
+                                                                    <td class="text-center fontweight"> +</td>
+                                                                    <td class="text-center fontweight"> +</td>
+                                                                </tr>
+                    
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+
+
+
+
+                                                </div>
+                                            
+                                                <div class="col-md-2 col-lg-2 col-sm-12 col-xlg-2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </ng-template>
+                    </li>
+                  
+                  </ul>
+                  
+                  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                  <div class="card customBoxShadow">
+                    <div class="card-body">
+                        <div class="row ">
+                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                            </div>
+                            <div class="col-lg-10 d-flex justify-content-center">
+                                <button  (click)="gotoProductList();" class="btn btn-danger m-l-20"><i class="fa fa-times mr-2"></i>Cancel</button>
+                                <button  (click)="gotoProductList();" class="btn btn-info m-l-20"><i class="fa fa-save mr-2"></i>Update</button>
+                            </div>
+                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+
+            </div>
+        </div>
+        <!-- new code end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

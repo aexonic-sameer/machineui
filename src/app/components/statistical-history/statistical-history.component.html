@@ -1,0 +1,347 @@
+
+
+
+<div class="backgroundLightGray">
+    <div class="row paddingCustom">
+        <div class="col-md-1 col-lg-1  col-sm-1 col-xlg-1">
+            <div class="flexcontenersideBar">
+                <app-side-menu></app-side-menu>
+            </div>
+        </div>
+        <div class="col-md-11 col-lg-11  col-sm-11 col-xlg-11">
+            <div class="flexcontener backgroundColorWhite">
+        <!-- New code -->
+
+        <div class="row ">
+            <div class="col-md-6 col-lg-6  col-sm-6 col-xlg-6">
+            </div>
+            <div class="col-md-6 col-lg-6  col-sm-6 col-xlg-6" style="margin-top: 12px;">
+                <div class="row" style="padding: 14px;">
+                  <div class="col-md-4 col-lg-4  col-sm-4 col-xlg-4">
+                    <div class=" little-profile m-b-10">
+                            <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Inspection Record</h6>
+                            <select [(ngModel)]="inspectionRecord"  required
+                            #cName="ngModel" name="cName" class=" input_BOX input-box-text-style" id="selectedCompanyName">
+                                <option value="">inspection record</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                    </div>
+                 </div>
+                    <div class="col-md-4 col-lg-4  col-sm-4 col-xlg-4">
+                        <div class=" little-profile m-b-10">
+                            <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Start Time</h6>
+                            <input type="text" class=" input_BOX input-box-text-style" placeholder="Enter user name"
+                                [(ngModel)]="startTime" name="userName" required
+                                #uName="ngModel" id="uName">
+                            
+                        </div>
+                   </div>
+                   <div class="col-md-4 col-lg-4  col-sm-4 col-xlg-4">
+                    <div class=" little-profile m-b-10">
+                        <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Stop Time</h6>
+                        <input type="text" class=" input_BOX input-box-text-style" placeholder="Enter user name"
+                            [(ngModel)]="endTime" name="userName" required
+                            #uName="ngModel" id="uName">
+                         
+                    </div>
+                </div>
+              
+                <div class="col-md-4 col-lg-4  col-sm-4 col-xlg-4">
+                    <div class=" little-profile m-b-10">
+                        <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Rroduct/Run</h6>
+                        <input type="text" class=" input_BOX input-box-text-style" placeholder="Enter user name"
+                            [(ngModel)]="productRun" name="userName" required
+                            #uName="ngModel" id="uName">
+                        
+                    </div>
+               </div>
+               <div class="col-md-4 col-lg-4  col-sm-4 col-xlg-4">
+                <div class=" little-profile m-b-10">
+                    <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Product Name</h6>
+                    <input type="text" class=" input_BOX input-box-text-style" placeholder="Enter user name"
+                        [(ngModel)]="productName" name="userName" required
+                        #uName="ngModel" id="uName">
+                     
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4  col-sm-4 col-xlg-4">
+                <div class=" little-profile m-b-10">
+                    <h6 class="text-muted f-s-label"><span class="text-danger">*&nbsp;</span>Lot Code</h6>
+                    <input type="text" class=" input_BOX input-box-text-style" placeholder="Enter user name"
+                        [(ngModel)]="lotCode" name="userName" required
+                        #uName="ngModel" id="uName">
+                   
+                </div>
+            </div>
+
+                </div>
+
+
+           
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12 col-lg-12  col-sm-12 col-xlg-12">
+
+                <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs" style="margin-top: -28px;margin-left: 24px;">
+                    <li [ngbNavItem]="1">
+                      <a ngbNavLink>List</a>
+                      <ng-template ngbNavContent>
+                        <div class="card">
+                            <div class="card-body">
+                             
+                            
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr class="tableHeadingStyle">
+                                                <th class="th_top">ID</th>
+                                                <th class="th_top">Time</th>
+                                                <th class="th_top">Judgement</th>
+                                                <th class="th_top">Defect Type</th>
+                                                <th class="th_top">Inspection Result</th>
+                                                <th class="th_top">Seal Score</th>
+                                                <th class="th_top">Seal Defect Location</th>
+                                             
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="cursor_pointer">1</td>
+                                                <td class="cursor_pointer">11/20/2020 9:46:43</td>
+                                                <td class="cursor_pointer">seal</td>
+                                                <td class="cursor_pointer">Width-Minor</td>
+                                                <td class="cursor_pointer">Fail</td>
+                                                <td class="cursor_pointer">75</td>
+                                                <td class="cursor_pointer">Top-R gt</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cursor_pointer">2</td>
+                                                <td class="cursor_pointer">11/20/2020 9:46:44</td>
+                                                <td class="cursor_pointer">Foreign</td>
+                                                <td class="cursor_pointer">Contaminant</td>
+                                                <td class="cursor_pointer">Fail</td>
+                                                <td class="cursor_pointer">99</td>
+                                                <td class="cursor_pointer">None</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cursor_pointer">3</td>
+                                                <td class="cursor_pointer">11/20/2020 9:46:43</td>
+                                                <td class="cursor_pointer">seal</td>
+                                                <td class="cursor_pointer">Width-Minor</td>
+                                                <td class="cursor_pointer">Fail</td>
+                                                <td class="cursor_pointer">75</td>
+                                                <td class="cursor_pointer">Top-R gt</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cursor_pointer">4</td>
+                                                <td class="cursor_pointer">11/20/2020 9:46:44</td>
+                                                <td class="cursor_pointer">Foreign</td>
+                                                <td class="cursor_pointer">Contaminant</td>
+                                                <td class="cursor_pointer">Fail</td>
+                                                <td class="cursor_pointer">99</td>
+                                                <td class="cursor_pointer">None</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cursor_pointer">5</td>
+                                                <td class="cursor_pointer">11/20/2020 9:46:43</td>
+                                                <td class="cursor_pointer">seal</td>
+                                                <td class="cursor_pointer">Width-Minor</td>
+                                                <td class="cursor_pointer">Fail</td>
+                                                <td class="cursor_pointer">75</td>
+                                                <td class="cursor_pointer">Top-R gt</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cursor_pointer">6</td>
+                                                <td class="cursor_pointer">11/20/2020 9:46:44</td>
+                                                <td class="cursor_pointer">Foreign</td>
+                                                <td class="cursor_pointer">Contaminant</td>
+                                                <td class="cursor_pointer">Fail</td>
+                                                <td class="cursor_pointer">99</td>
+                                                <td class="cursor_pointer">None</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cursor_pointer">7</td>
+                                                <td class="cursor_pointer">11/20/2020 9:46:43</td>
+                                                <td class="cursor_pointer">seal</td>
+                                                <td class="cursor_pointer">Width-Minor</td>
+                                                <td class="cursor_pointer">Fail</td>
+                                                <td class="cursor_pointer">75</td>
+                                                <td class="cursor_pointer">Top-R gt</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cursor_pointer">8</td>
+                                                <td class="cursor_pointer">11/20/2020 9:46:44</td>
+                                                <td class="cursor_pointer">Foreign</td>
+                                                <td class="cursor_pointer">Contaminant</td>
+                                                <td class="cursor_pointer">Fail</td>
+                                                <td class="cursor_pointer">99</td>
+                                                <td class="cursor_pointer">None</td>
+                                            </tr>
+                                      
+                                       
+                                      
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                      <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                      </li>
+                                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                      <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                      </li>
+                                    </ul>
+                                  </nav>
+                               
+                            </div>
+                        </div>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                      <a ngbNavLink>Images</a>
+                      <ng-template ngbNavContent>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12  col-sm-4 col-xlg-12">
+                                <div class="row scrollStyle" style="padding-left: 15px;">
+                                    <div *ngFor="let img of configImg" (click)="imageZoomModelFunction(imageZoomModel)" class="col-sm-2 col-2 d-flex justify-content-center justify-content-between-xs IsActiveAminitie">
+                                        <img alt="Card image cap" style="cursor: pointer;
+                                        height: auto;
+                                        width: 85%;
+                                        border: 1px solid gray;
+                                        padding: 14px;"  class="card-img-top img-responsive default_height_img icoImgStyle " src="{{img.img}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="3">
+                      <a ngbNavLink>Summary</a>
+                      <ng-template ngbNavContent>
+                        <div class="row parantFlexSummary" >
+                            <div class="flexcontenerSummary" >
+                                <div class="">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3" class="text-center custom_border customBackground">Breakdown of Inspection Record</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class=" customTd custom_border">Pass</td>
+                                                <td class="custom_border">530</td>
+                                                <td class="custom_border">99.6%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="customTd custom_border">Fail</td>
+                                                <td class="custom_border">2</td>
+                                                <td class="custom_border">0.376%</td>
+                                            </tr>
+                                            <tr class="custom_border_top">
+                                                <td class="customTd custom_border">Total</td>
+                                                <td class="custom_border">532</td>
+                                                <td class="custom_border"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                              </div>
+                            <div class="flexcontenerSummary" >
+                                <div class="">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3" class="text-center custom_border customBackground">Breakdown of Fail Type</th>
+                                               
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="customTd custom_border">Pass</td>
+                                                <td class="custom_border">530</td>
+                                                <td class="custom_border">99.6%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="customTd custom_border">Fail</td>
+                                                <td class="custom_border">2</td>
+                                                <td class="custom_border">0.376%</td>
+                                            </tr>
+                                            <tr class="custom_border_top">
+                                                <td class="customTd custom_border">Total</td>
+                                                <td class="custom_border">532</td>
+                                                <td class="custom_border"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                               
+                              </div>
+                        </div>
+                      </ng-template>
+                    </li>
+                  </ul>
+                  
+                  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+
+            </div>
+        </div>
+        <!-- new code end -->
+            </div>
+        </div>
+        <ng-template #imageZoomModel let-c="close" let-d="dismiss">
+            <div class="modal-header background_color">
+               
+                <button type="button" class="outline_none custom_color_white close mod_close_btn" aria-label="Close" id="imageModalClose" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+                    <img alt="Card image cap" style="cursor: pointer;
+                    height: auto;
+                    width: 100%;"  class="card-img-top img-responsive default_height_img icoImgStyle " src="assets/images/productimg/xrayImg2.PNG">
+        </ng-template>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+.flexcontenersideBar{
+    margin-top: 70px;
+    /* position: fixed;
+    left: 15px;
+    bottom: 8px;
+    top: 60px; */
+}
+.flexcontener{
+    margin-top: 70px;
+    height: 89vh;
+    box-shadow: 0 0px 2px rgb(0 0 0 / 62%);
+}
+
+.xrayOn{
+    /* display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0px 3px rgb(0 0 0 / 62%); */
+}
+h2{
+    font-weight: 700;
+}
+.inspectionC{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0px 2px rgb(0 0 0 / 62%);
+    margin-top: 14px;
+    padding: 6px 15px;
+}
+.headingTextStyle{
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+}
+
+.inspectionBtn{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.sealBtn{
+        font-size: 14px;
+        font-weight: 500;
+        padding: 4px 24px;
+        border-radius: 21px;
+}
+.sealStatus{
+    height: 20px;
+    width: 20px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+.fmBtn{
+    padding: 4px 24px !important;
+}
+.backgroundLightGray{
+    background-color: #ebebeb73;
+}
+.backgroundColorWhite{
+    background-color: #fff;
+}
+.paddingCustom{
+    padding: 1px 22px 1px 6px;
+}

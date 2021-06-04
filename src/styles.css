@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import '~perfect-scrollbar/css/perfect-scrollbar.css'; */
+
+/* .ps .ps__scrollbar-y-rail {
+    left: 3px;
+    right: auto;
+} */
+
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+/* @import "~ng-pick-datetime/assets/style/picker.min.css"; */
+@import 'bootstrap/dist/css/bootstrap.css';
+/* @import "~bootstrap/dist/css/bootstrap.css" */
+

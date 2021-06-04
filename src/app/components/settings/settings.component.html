@@ -1,0 +1,923 @@
+
+
+
+<div class="backgroundLightGray" style="height: 100vh;">
+    <div class="row paddingCustom">
+        <div class="col-md-1 col-lg-1  col-sm-1 col-xlg-1">
+            <div class="flexcontenersideBar">
+                <app-side-menu></app-side-menu>
+            </div>
+        </div>
+        <div class="col-md-11 col-lg-11  col-sm-11 col-xlg-11">
+            <div class="flexcontener">
+        <!-- New code -->
+
+        <div class="row ">
+            <div class="col-md-12 col-lg-12  col-sm-12 col-xlg-12">
+
+                <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills settingNav customBoxShadow">
+                    <li [ngbNavItem]="1">
+                      <a ngbNavLink>General</a>
+                      <ng-template ngbNavContent>
+                        <div class="m-t-20 ">
+                            <div class="card customBoxShadow">
+                                <div class="card-body" style="margin-bottom: 3rem;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                            <div class="row">
+                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                </div>
+
+                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5">
+
+                                                <div style="border-right: 5px solid gray;">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="startDate">Start Date</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="date" class="form-control" name="startDate">
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="startTime">Start Time</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="time" class="form-control"  name="startTime">
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="format">Format</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control" value="MM/DD/YYYY" name="format" required>
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="screenSaverDelay">Screen Saver Delay</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                        <span class="screenSaverDelay">
+                                                            <input type="text" class="form-control"  name="screenSaverDelay"><label style="margin-left: 14px;">min</label>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="address">Display Brightness</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                           <span class="displayBrightness">
+                                                            <em class="fa fa-angle-up upDownIconStayle"></em>
+                                                            <em class="fa fa-angle-down upDownIconStayle" style="margin-left: 14px;"></em>
+                                                           </span>
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="address">Unit of Measurement</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                              <select [(ngModel)]="unitOfMeasurment" name="language" required
+                                                                #language="ngModel" class="form-control input_BOX input-box-text-style custom-select" id="selecteduserRole">
+                                                                    <option value="">Select unit of measurment</option>
+                                                                    <option value="2">Standard</option>
+                                                                    
+                                                                </select>
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="address">Default System Language</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                              <select [(ngModel)]="userLanguage" name="language" required
+                                                                #language="ngModel" class="form-control input_BOX input-box-text-style custom-select" id="selecteduserRole">
+                                                                    <option value="">Select language</option>
+                                                                    <option value="1">English</option>
+                                                                    <option value="2">हिंदी</option>
+                                                                </select>
+                                                          
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Model Number</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" id="address" name="address" required>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Software Version</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" id="address" name="address" required>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Mainboard Version</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" id="address" name="address" required>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="address">Line Sensor version</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" class="form-control" id="address" name="address" required>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                          <div style="margin-top: 4rem;">
+                                                              <button  (click)="ValidationModelFunction(validationSchedule)" class="btn waves-effect waves-light btn-warning">Validation Schedule</button>
+                                                          </div>
+                                                        </div>
+                                                  
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                      <a ngbNavLink>Connectivity</a>
+                      <ng-template ngbNavContent>
+                        <div class="m-t-20 ">
+                            <div class="card customBoxShadow">
+                                <div class="card-body" style="margin-bottom: 5rem;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                            <div class="row">
+                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                </div>
+
+                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5">
+
+                                                <div style="border-right: 5px solid gray;">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="startDate">Serial Mode</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control" value="Enable" name="serialMode">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="startTime">Communication Stnd.</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control" value="Rs-232" name="communicationStnd">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="format">Baudrate</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control"  value="115200" name="baudrate">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="screenSaverDelay">Parity</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control" value="None" name="Parity">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="address">Stop Bit</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control"  value="1bit" name="stopBit">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="address">Data Bit</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control" value="8bit" name="dataBit">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="address">Terminate</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control" value="OFF" name="terminate">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                          <div style="margin-top: 4rem;">
+                                                              <button  (click)="NetworkConfigurator();" class="btn waves-effect waves-light btn-warning">Network Configurator</button>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="3">
+                      <a ngbNavLink>Controls</a>
+                      <ng-template ngbNavContent>
+                        <div class="m-t-20 ">
+                            <div class="card customBoxShadow">
+                                <div class="card-body" style="margin-bottom: 5rem;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                            <div class="row">
+                                                <div class="col-md-2 col-lg-2 col-sm-12 col-xlg-2">
+                                                </div>
+
+                                                <div class="col-md-8 col-lg-8 col-sm-12 col-xlg-8">
+
+                                                    <div class="">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="conveyorControlth" >Conveyor Controls</th>
+                                                                    <th class="text-center conveyorControlth">X-ray Belt</th>
+                                                                    <th class="text-center conveyorControlth">Reject Belt</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="conveyorControltd">Rotation Direction</td>
+                                                                    <td > <input type="text" class="input-box-text-style rotationDirectionInputBox" value="CW" name="serialMode"></td>
+                                                                    <td > <input type="text" class="input-box-text-style rotationDirectionInputBox" value="CW" name="serialMode"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="conveyorControltd">Default Belt Speed</td>
+                                                                    <td > <input type="text" class="input-box-text-style rotationDirectionInputBox" value="15 m/min" name="serialMode"></td>
+                                                                    <td > <input type="text" class="input-box-text-style rotationDirectionInputBox" value="15 m/min" name="serialMode"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="conveyorControltd">Active Speed Monitor</td>
+                                                                    <td > <input type="text" disabled class="input-box-text-style rotationDirectionInputBox" value="30 m/min" name="serialMode"></td>
+                                                                    <td > <input type="text" disabled class="input-box-text-style rotationDirectionInputBox" value="30 m/min" name="serialMode"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="conveyorControltd">Error Checking</td>
+                                                                    <td > <input type="text" class="input-box-text-style rotationDirectionInputBox" value="ON" name="serialMode"></td>
+                                                                    <td > <input type="text" class="input-box-text-style rotationDirectionInputBox" value="ON" name="serialMode"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+
+
+
+
+                                                </div>
+                                            
+                                                <div class="col-md-2 col-lg-2 col-sm-12 col-xlg-2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="4">
+                        <a ngbNavLink>Backup/Stroage</a>
+                        <ng-template ngbNavContent>
+                            <div class="m-t-20 ">
+                                <div class="card customBoxShadow">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                                <div class="row">
+                                                    <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                    </div>
+    
+                                                    <div class="col-md-10 col-lg-10 col-sm-12 col-xlg-10">
+    
+                                                    <div>
+                                                    <div class="row" style="padding: 5.5rem 15rem;">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-6 mb-2 d-flex justify-content-center align-items-center">
+                                                            <span class="backupStorageBtn">
+                                                                <button class="btn btn-block btn-drak p_15 m_top_18 backupStorageBtnStyle">Backup</button>
+                                                                <button class="btn btn-block btn-drak p_15 m_top_18 backupStorageBtnStyle">Backup to Cloud</button>
+                                                                <button class="btn btn-block btn-drak p_15 m_top_18 backupStorageBtnStyle">Factory Settings</button>
+                                                            </span>
+                                                       
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-6 mb-2 d-flex justify-content-center align-items-center">
+                                                            <span class="backupStorageBtn">
+                                                                <button class="btn btn-block btn-drak p_15 m_top_18 backupStorageBtnStyle">Restore</button>
+                                                                <button class="btn btn-block btn-drak p_15 m_top_18 backupStorageBtnStyle">Restore from Cloud</button>
+                                                                <button class="btn btn-block btn-drak p_15 m_top_18 backupStorageBtnStyle">Create Restore Point</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                              
+                                                    <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                      </li>
+                      <li [ngbNavItem]="5">
+                        <a ngbNavLink>Engineering</a>
+                        <ng-template ngbNavContent>
+                            <div class="m-t-20 ">
+                                <div class="card customBoxShadow" style="height: 28rem;
+                                overflow-y: scroll;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                                <div class="row">
+                                                    <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                    </div>
+    
+                                                    <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5">
+    
+                                                    <div style="border-right: 5px solid gray;">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                          <span class="EnggheadingStyle">Tube Information</span>
+                                                        </div>
+                                                      
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="tubeHours">Tube Hours</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" value="9.4hrs" class="input-box-text-style input_BOX" name="tubeHours">
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="Maximunkv">Maximun kV</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" value="20kV" class="input-box-text-style input_BOX"  name="Maximunkv">
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                <label for="MaximummA">Maximum mA</label>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                <input type="text" value="20mA" class="input-box-text-style input_BOX"  name="MaximummA" required>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                    <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                                <span class="EnggheadingStyle">Coustomer Information</span>
+                                                              
+                                                              </div>
+                                                            
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                    <label for="CoustomerID">Coustomer ID</label>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                    <input type="text" value="100" class="input-box-text-style input_BOX"  name="CoustomerID" required>
+                                                                  
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                    <label for="LocationID">Location ID</label>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                    <input type="text" value="10" class="input-box-text-style input_BOX"  name="LocationID" required>
+                                                                  
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                                    <label for="LineID">Line ID</label>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                    <input type="text" value="4" class="input-box-text-style input_BOX"  name="LineID" required>
+                                                                  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                            <span class="EnggheadingStyle">Detector Calibration</span>
+                                                        </div>
+
+                                                        <div class="col-md-4 col-lg-4 col-sm-12 col-xlg-4 customRowPading">
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Binning</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="2" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Exposure Time</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0.0357143" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Image Width</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="100" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Image Height</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="100" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Image Rowbytes</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="100" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Line Rate</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="3500" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Tunnel Sensor Shading</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="3500" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 col-lg-4 col-sm-12 col-xlg-4 customRowPading">
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Line Speed</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0.2016" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Bundle Height</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="6000" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Drk cal stbl mx int</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="511" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Shade cal samples</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="128" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Shade Cal Method</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="2" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Sh cal sub min int</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="512" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 col-lg-4 col-sm-12 col-xlg-4 customRowPading">
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Sh cal data 2 mem</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="1" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Shade cal target</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="4095" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Readout Direction </label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="1" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours"># of tab cal</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="18" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Tap cal gain</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="20" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Sensor Mode</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="4" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                                <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-lg-4 col-sm-12 col-xlg-4 customRowPading">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                                <span class="EnggheadingStyle">HVPS States</span>
+                                                              </div>
+
+
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">HV Control</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6 text-center">
+                                                                    <button style="font-weight: 600;"  class="btn btn-states"  >OFF&nbsp;&nbsp;</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Interlock </label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6 text-center">
+                                                                    <button style="font-weight: 600;"  class="btn btn-danger-states"  >OPEN&nbsp;&nbsp;</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Fault Status</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6 text-center">
+                                                                    <button style="font-weight: 600;"  class="btn btn-states"  >OK&nbsp;&nbsp;</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Local / Remote</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6 text-center">
+                                                                    <button style="font-weight: 600;"  class="btn btn-states"  >OK&nbsp;&nbsp;</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Arc Error</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6 text-center">
+                                                                    <button style="font-weight: 600;"  class="btn btn-states"  >OK&nbsp;&nbsp;</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Over Voltage</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6 text-center">
+                                                                    <button style="font-weight: 600;"  class="btn btn-states"  >OK&nbsp;&nbsp;</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Under Voltage</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6 text-center">
+                                                                    <button style="font-weight: 600;"  class="btn btn-states"  >OK&nbsp;&nbsp;</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Over Current</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6 text-center">
+                                                                    <button style="font-weight: 600;"  class="btn btn-states"  >OK&nbsp;&nbsp;</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Under Current</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6 text-center">
+                                                                    <button style="font-weight: 600;"  class="btn btn-states"  >OK&nbsp;&nbsp;</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 col-lg-4 col-sm-12 col-xlg-4 customRowPading">
+                                                          
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                                <span class="EnggheadingStyle">HVPS Monitor</span>
+                                                              </div>
+                                                          
+                                                          
+                                                          
+                                                          
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">V</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">mA</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0.0251" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Filament A</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0.0000" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">HVPS-15V</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="2.1917" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">V</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">mA</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0.0000" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Filament Limit A</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0.0000" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <label for="tubeHours">Filament Preheat A</label>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0.0000" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 col-lg-4 col-sm-12 col-xlg-4 customRowPading">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                                <span class="EnggheadingStyle">Click to Reset</span>
+                                                                
+                                                              </div>
+                                                            <div class="row m_b_8">
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <button class="btn btn-dark btn-block" style="font-weight: 500;
+                                                                    background-color: gray;">Total Hrs HV On</button>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
+                                                                    <input type="text" value="0000" class="input-box-text-style input_BOX" name="tubeHours">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                      </li>
+                  </ul>
+                  
+                  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                  <div class="card customBoxShadow">
+                    <div class="card-body">
+                        <div class="row ">
+                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                            </div>
+                            <div class="col-lg-10 d-flex justify-content-center">
+                                <button  class="btn btn-danger m-l-20"><i class="fa fa-times mr-2"></i>Cancel</button>
+                                <button  class="btn btn-info m-l-20"><i class="fa fa-save mr-2"></i>Save</button>
+                            </div>
+                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+
+            </div>
+        </div>
+        <!-- new code end -->
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #validationSchedule let-c="close" let-d="dismiss">
+    <div class="modal-header customBackgroundColor">
+        <div>
+            <span class="headersStyle">Validation settings</span>
+        </div>
+        <button type="button" style="color: #fff;" class="outline_none custom_color_white close mod_close_btn" aria-label="Close" (click)="d('Cross click')">
+             <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="card m_b_0" style="background-color: #eaeaea;">
+          <div class="card-body">
+            <div class="row d-flex align-items-center">
+              <label class="col-lg-6 col-md-6 col-sm-12 col-12 mb-2 py-0" for="country">Set validation interval to</label>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-2 py-0">
+                <select [(ngModel)]="validationInterval" name="validationInterval" required
+                class="form-control input_BOX input-box-text-style custom-select">
+                    <option value="">Select validation interval</option>
+                    <option value="1">Every 30 minutes</option>
+                    <option value="1">Every 60 minutes</option>
+                </select>
+              </div>
+            </div>
+            <div class="row d-flex align-items-center">
+                <label class="col-lg-6 col-md-6 col-sm-12 col-12 mb-2 py-0" for="country">Grace period</label>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-2 py-0">
+                    <select [(ngModel)]="gracePeriod" name="gracePeriod" required
+                     class="form-control input_BOX input-box-text-style custom-select" >
+                        <option value="">Select grace period</option>
+                        <option value="1">15 Minutes</option>
+                        <option value="1">30 Minutes</option>
+                    </select>
+                </div>
+              </div>
+              <div class="row d-flex align-items-center">
+                <label class="col-lg-6 col-md-6 col-sm-12 col-12 mb-2 py-0" for="country">Upon Expiration</label>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-2 py-0">
+                    <select [(ngModel)]="uponExpiration" name="uponExpiration" required
+                     class="form-control input_BOX input-box-text-style custom-select">
+                        <option value="">Upon Expiration</option>
+                        <option value="1">Sound Alarm</option>
+                    </select>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row text-center m_18">
+            <div class="col-12">
+              <button type="button" (click)='cancelValidationSetting();'
+                class="btn btn btn-danger">Cancel</button>
+              <button type="button" style="margin-left: 12px; "(click)='savValidationSetting();'
+                class="btn btn btn-success  background_color">Ok</button>
+            </div>
+          </div>
+      </div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
