@@ -8,7 +8,10 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationRoutes } from './authentication.routing';
 import { updatePasswordComponent } from '../authentication/updatePassword/updatePassword.component';
 @NgModule({
-  imports: [CommonModule,RouterModule.forChild(AuthenticationRoutes),NgbModule,FormsModule],
+  imports: [CommonModule, RouterModule.forChild(AuthenticationRoutes),NgbModule,FormsModule],
+    
   declarations: [NotFoundComponent,LoginComponent,updatePasswordComponent]
+  
+  
 })
 export class AuthenticationModule {}

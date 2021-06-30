@@ -1,422 +1,832 @@
 
 
 
-<div class="backgroundLightGray" style="height: 100vh;">
-    <div class="row paddingCustom">
-        <div class="col-md-1 col-lg-1  col-sm-1 col-xlg-1">
-            <div class="flexcontenersideBar">
-                <app-side-menu></app-side-menu>
-            </div>
-        </div>
-        <div class="col-md-11 col-lg-11  col-sm-11 col-xlg-11">
+<div class="backgroundLightGray">
+    <div class="row">
+        <div class="col-md-12 col-lg-12  col-sm-12 col-xlg-12">
             <div class="flexcontener">
         <!-- New code -->
-
         <div class="row ">
             <div class="col-md-12 col-lg-12  col-sm-12 col-xlg-12">
-                <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills settingNav customBoxShadow">
-                    <li [ngbNavItem]="1">
-                      <a ngbNavLink>Product Info</a>
-                      <ng-template ngbNavContent>
-                        <div class="m-t-20 ">
-                            <div class="card customBoxShadow" style="height: 59vh;">
-                                <div class="card-body" style="margin-bottom: 3rem;">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
-                                            <div class="row">
-                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
-                                                </div>
-                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5" style="border-right: 5px solid gray;">
-                                                <div >
-                                                <div class="row" style="margin-top: 20px;">
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                            <label for="productNumber">Product Number</label>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                            <input type="text" class="form-control" value="001" name="productNumber">
-                                                        </div>
+                <form #editProductForm="ngForm">
+                    <!-- Product Info -->
+                    <div class="m-t-20 ">
+                        <div class="card customBoxShadow">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                        <div class="ProductHeading">Product Info</div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                            </div>
+                                            <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5" style="border-right: 5px solid gray;display: flex;
+                                            align-items: center;">
+                                            <div >
+                                            <div class="row" style="margin-top: 20px;">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                        <label for="productNumber">Product Number</label>
                                                     </div>
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                            <label for="productName">Product Name</label>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                            <input type="text" class="form-control" value="Tuna Pouch" name="productName">
-                                                          
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                            <label for="productCode">Product Code</label>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                            <input type="text" class="form-control" value="705" name="productCode">
-                                                          
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center" style="margin-top: 20px;">
-                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6" style="display: flex;
-                                                        flex-direction: row;
-                                                        flex-wrap: nowrap;
-                                                        justify-content: space-around;
-                                                        align-items: center;
-                                                        align-content: center;">
-                                                            <button  class="btn btn-success ProductImageStyle" >Select Image</button>
-                                                        <button  class="btn btn-danger ProductImageStyle">Delete Image</button>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                        <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Product Number"
+                                                        [(ngModel)]="productNumber" name="productNumber" required
+                                                        #pNumber="ngModel">
+                                                        <div class="input-group m-t-5 m-b-5">
+                                                            <div [hidden]="pNumber.valid || pNumber.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                <div style="font-size: 13px;" [hidden]="!pNumber.hasError('required')"><i class="fa fa-info-circle"></i> Product Number is required
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                        <label for="prodcutName">Product Name</label>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                        <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Product Number"
+                                                        [(ngModel)]="prodcutName" name="prodcutName" required
+                                                        #pName="ngModel">
+                                                        <div class="input-group m-t-5 m-b-5">
+                                                            <div [hidden]="pName.valid || pName.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                <div style="font-size: 13px;" [hidden]="!pName.hasError('required')"><i class="fa fa-info-circle"></i> Product Number is required
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                        <label for="productCode">Product Code</label>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                        <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Product Code"
+                                                        [(ngModel)]="productCode" name="productCode" required
+                                                        #pCode="ngModel">
+                                                        <div class="input-group m-t-5 m-b-5">
+                                                            <div [hidden]="pCode.valid || pCode.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                <div style="font-size: 13px;" [hidden]="!pCode.hasError('required')"><i class="fa fa-info-circle"></i> Product Code is required
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center" style="margin-top: 20px;">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                    </div>
                                                 </div>
                                             </div>
-                                                <div class="col-md-6 col-lg-6 col-sm-12 col-xlg-6">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center" style="flex-direction:column">
-                                                            
-                                                            <span class="imgPreview">
-                                                               
-                                                            <img src="assets/images/productimg/product1.PNG" class="productImagstyle" alt="productImg"/>
-                                                          </span>
-                                                          <label style="font-size: 20px; margin-top: 14px;">Image Preview</label>
-                                                        </div>
+                                            </div>
+                                            </div>
+                                            <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center" style="flex-direction:column">
+                                                        <span class="imgPreview">
+                                                        <img src="{{imageUrl}}" class="productImagstyle" alt="productImg" onerror="this.src='assets/images/background/placeholder.png'"/>
+                                                       
+                                                    </span>
+                                                
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;
+                                                    flex-direction: row;
+                                                    flex-wrap: nowrap;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    align-content: center;
+                                                    margin-top: 14px;">
+                                                        <button  class="btn btn-success ProductImageStyle" >Select Image</button>
+                                                    <button  class="btn btn-danger ProductImageStyle" style="margin-left: 14px;">Delete Image</button>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
-                                                </div> -->
                                             </div>
+                                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                            </div>
+                                    
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                      </ng-template>
-                    </li>
-                    <li [ngbNavItem]="2">
-                      <a ngbNavLink>Basic Setup</a>
-                      <ng-template ngbNavContent>
-                        <div class="m-t-20 ">
-                            <div class="card customBoxShadow" style="height: 59vh;">
-                                <div class="card-body" style="margin-bottom: 1rem;">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
-                                            <div class="row">
-                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
-                                                </div>
-
-                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5" >
-
-                                                <div >
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="productLen">Product length</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="120" name="productLen">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="startTime">Inspection Belt Speed</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="25" name="communicationStnd">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="format">Rejector Belt Speed </label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control"  value="25" name="baudrate">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="screenSaverDelay">Tube Voltage</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="20" name="Parity">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="address">Tube Current </label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control"  value="15" name="stopBit">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="address">Consecutive failure</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="Enabled" name="dataBit">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="address">Consecutive Variable</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="5" name="terminate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5" style="border-left: 5px solid gray;">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="productLen">Minimum Seal width Top </label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="0.25" name="productLen">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="startTime">Maximum Seal width Top </label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="0.25" name="communicationStnd">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="format">Minimum Seal width Bottom </label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control"  value="0.25" name="baudrate">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="screenSaverDelay">Maximum Seal Width Bottom</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="0.25" name="Parity">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="address">Minimum Seal width Right Side</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control"  value="0.25" name="stopBit">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="address">Maximim Seal width Right Side</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="0.25" name="dataBit">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="address">Minimum Seal width Left Side</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="0.25" name="terminate">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
-                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
-                                                                <label for="address">Maximum Seal width Left Side</label>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                                                <input type="text" class="form-control" value="0.25" name="terminate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                      </ng-template>
-                    </li>
-                    <li [ngbNavItem]="3">
-                      <a ngbNavLink>Digitals Outputs</a>
-                      <ng-template ngbNavContent>
-                        <div class="m-t-20 ">
-                            <div class="card customBoxShadow" style="height: 70vh;">
-                                <div class="card-body" style="margin-bottom: 1rem;">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
-                                            <div class="row">
-                                                <div class="col-md-2 col-lg-2 col-sm-12 col-xlg-2">
-                                                </div>
-
-                                                <div class="col-md-8 col-lg-8 col-sm-12 col-xlg-8">
-
-                                                    <div class="">
-                                                        <table class="table table-bordered ">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="conveyorControlth" ></th>
-                                                                    <th class="text-center conveyorControlth">Stop</th>
-                                                                    <th class="text-center conveyorControlth">D01</th>
-                                                                    <th class="conveyorControlth" >D02</th>
-                                                                    <th class="text-center conveyorControlth">D03</th>
-                                                                    <th class="text-center conveyorControlth">D04</th>
-                                                                    <th class="conveyorControlth" >D05</th>
-                                                                    <th class="text-center conveyorControlth">D06</th>
-                                                                    <th class="text-center conveyorControlth">D07</th>
-                                                                    <th class="text-center conveyorControlth">D08</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr >
-                                                                    <td class="conveyorControltd">XRAY ON</td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                </tr>
-                                                                <tr >
-                                                                    <td class="conveyorControltd">Error</td>
-                                                                    <td class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td class="conveyorControlth" > </td>
-                                                                </tr>
-                                                                <tr >
-                                                                    <td class="conveyorControltd">E-Stop</td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                </tr>
-                                                                <tr >
-                                                                    <td class="conveyorControltd">Conveyor Running</td>
-                                                                    <td class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td class="conveyorControlth" > </td>
-                                                                </tr>
-                                                                <tr >
-                                                                    <td class="conveyorControltd">Seal Defect</td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td class="text-center fontweight">  <span class="dot"></span></td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                    <td > </td>
-                                                                </tr>
-                                                                <tr >
-                                                                    <td class="conveyorControltd">Foreign Material Defect</td>
-                                                                    <td class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth text-center"> <span class="dot"></span> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td  class="conveyorControlth"> </td>
-                                                                    <td class="conveyorControlth" > </td>
-                                                                </tr>
-                                                                <tr >
-                                                                    <td class="conveyorControltd" style="line-height: 0;">Delat Time[s]</td>
-                                                                    <td class="text-center fontweight"> 0.00</td>
-                                                                    <td class="text-center fontweight"> 0.00</td>
-                                                                    <td class="text-center fontweight"> 0.00</td>
-                                                                    <td class="text-center fontweight"> 0.00</td>
-                                                                    <td class="text-center fontweight"> 0.00</td>
-                                                                    <td class="text-center fontweight" > 0.00</td>
-                                                                    <td class="text-center fontweight"> 0.00 </td>
-                                                                    <td class="text-center fontweight" > 0.00</td>
-                                                                    <td class="text-center fontweight"> 0.00</td>
-                                                                </tr>
-                                                                <tr >
-                                                                    <td class="conveyorControltd " style="line-height: 0;">Hold Time[s]</td>
-                                                                    <td class="text-center fontweight"> 1.00</td>
-                                                                    <td class="text-center fontweight"> 1.00</td>
-                                                                    <td class="text-center fontweight"> 1.00</td>
-                                                                    <td class="text-center fontweight"> 1.00</td>
-                                                                    <td class="text-center fontweight"> 1.00</td>
-                                                                    <td class="text-center fontweight"> 1.00</td>
-                                                                    <td class="text-center fontweight"> 1.00 </td>
-                                                                    <td class="text-center fontweight"> 1.00</td>
-                                                                    <td class="text-center fontweight"> 1.00</td>
-                                                                </tr>
-                                                                <tr >
-                                                                    <td class="conveyorControltd" style="line-height: 0;">Polarity</td>
-                                                                    <td class="text-center fontweight"> +</td>
-                                                                    <td class="text-center fontweight"> +</td>
-                                                                    <td class="text-center fontweight"> +</td>
-                                                                    <td class="text-center fontweight"> +</td>
-                                                                    <td class="text-center fontweight"> +</td>
-                                                                    <td class="text-center fontweight"> +</td>
-                                                                    <td class="text-center fontweight"> +</td>
-                                                                    <td class="text-center fontweight"> +</td>
-                                                                    <td class="text-center fontweight"> +</td>
-                                                                </tr>
-                    
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2 col-lg-2 col-sm-12 col-xlg-2">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                      </ng-template>
-                    </li>
-                  </ul>
-                  <div [ngbNavOutlet]="nav" class="mt-2"></div>
-                  <div class="card customBoxShadow">
-                    <div class="card-body">
-                        <div class="row ">
-                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
-                            </div>
-                            <div class="col-lg-10 d-flex justify-content-center">
-                                <button  (click)="gotoProductList();" class="btn btn-danger m-l-20"><i class="fa fa-times mr-2"></i>Cancel</button>
-                                <button  (click)="gotoProductList();" class="btn btn-info m-l-20"><i class="fa fa-save mr-2"></i>Add</button>
-                            </div>
-                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
-                            </div>
-                          </div>
                     </div>
-                    </div>
+                    <!-- End Product Info -->
 
+                    <!-- Basic Setup -->
+                    <div class="m-t-20 ">
+                        <div class="card customBoxShadow">
+                            <div class="card-body" style="margin-bottom: 1rem;">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                        <div class="ProductHeading">Basic Setup</div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                            </div>
+
+                                            <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5" >
+
+                                            <div >
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="productlength">Product length</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Product length"
+                                                            [(ngModel)]="productlength" name="productlength" required
+                                                            #plength="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="plength.valid || plength.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!plength.hasError('required')"><i class="fa fa-info-circle"></i> Product length is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="startTime">Inspection Belt Speed</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Inspection Belt Speed"
+                                                            [(ngModel)]="inspectionBeltSpeed" name="inspectionBeltSpeed" required
+                                                            #iBS="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="iBS.valid || iBS.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!iBS.hasError('required')"><i class="fa fa-info-circle"></i> Inspection belt speed is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="rejectorBeltSpeed">Rejector Belt Speed </label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Rejector Belt Speed"
+                                                            [(ngModel)]="rejectorBeltSpeed" name="rejectorBeltSpeed" required
+                                                            #rBS="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="rBS.valid || rBS.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!rBS.hasError('required')"><i class="fa fa-info-circle"></i> Rejector belt speed is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="tubeVoltage">Tube Voltage</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Tube Voltage"
+                                                            [(ngModel)]="tubeVoltage" name="tubeVoltage" required
+                                                            #tubeV="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="tubeV.valid || tubeV.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!tubeV.hasError('required')"><i class="fa fa-info-circle"></i> Tube voltage is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="address">Tube Current </label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Tube Current"
+                                                            [(ngModel)]="tubeCurrent" name="tubeCurrent" required
+                                                            #tubeC="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="tubeC.valid || tubeC.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!tubeC.hasError('required')"><i class="fa fa-info-circle"></i> Tube current is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="consecutivefailure">Consecutive Failure</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Consecutive Failure"
+                                                            [(ngModel)]="consecutivefailure" name="consecutivefailure" required
+                                                            #consecutiveF="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="consecutiveF.valid || consecutiveF.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!consecutiveF.hasError('required')"><i class="fa fa-info-circle"></i> Consecutive failure is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="consecutiveVariable">Consecutive Variable</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Consecutive Variable"
+                                                            [(ngModel)]="consecutiveVariable" name="consecutiveVariable" required
+                                                            #consecutiveV="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="consecutiveV.valid || consecutiveV.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!consecutiveV.hasError('required')"><i class="fa fa-info-circle"></i> Consecutive Variable is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <div class="col-md-5 col-lg-5 col-sm-12 col-xlg-5" style="border-left: 5px solid gray;">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="minimumSealwidthTop">Minimum Seal width Top </label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Minimum Seal width Top"
+                                                            [(ngModel)]="minimumSealwidthTop" name="minimumSealwidthTop" required
+                                                            #minimum_Seal_width_Top="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="minimum_Seal_width_Top.valid || minimum_Seal_width_Top.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!minimum_Seal_width_Top.hasError('required')"><i class="fa fa-info-circle"></i> Minimum Seal width Top is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="maximumSealwidthTop">Maximum Seal width Top </label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Maximum Seal width Top"
+                                                            [(ngModel)]="maximumSealwidthTop" name="maximumSealwidthTop" required
+                                                            #maximum_Seal_width_Top="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="maximum_Seal_width_Top.valid || maximum_Seal_width_Top.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!maximum_Seal_width_Top.hasError('required')"><i class="fa fa-info-circle"></i> Maximum Seal width Top is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="minimumSealwidthBottom">Minimum Seal width Bottom </label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Minimum Seal width Bottom"
+                                                            [(ngModel)]="minimumSealwidthBottom" name="minimumSealwidthBottom" required
+                                                            #minimum_Seal_width_Bottom="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="minimum_Seal_width_Bottom.valid || minimum_Seal_width_Bottom.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!minimum_Seal_width_Bottom.hasError('required')"><i class="fa fa-info-circle"></i> Minimum Seal width Bottom is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="maximumSealWidthBottom">Maximum Seal Width Bottom</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Maximum Seal Width Bottom"
+                                                            [(ngModel)]="maximumSealWidthBottom" name="maximumSealWidthBottom" required
+                                                            #maximum_Seal_Width_Bottom="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="maximum_Seal_Width_Bottom.valid || maximum_Seal_Width_Bottom.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!maximum_Seal_Width_Bottom.hasError('required')"><i class="fa fa-info-circle"></i> Maximum Seal Width Bottom is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="minimumSealwidthRightSide">Minimum Seal width Right Side</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Minimum Seal width Right Side"
+                                                            [(ngModel)]="minimumSealwidthRightSide" name="minimumSealwidthRightSide" required
+                                                            #minimum_Seal_width_Right_Side="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="minimum_Seal_width_Right_Side.valid || minimum_Seal_width_Right_Side.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!minimum_Seal_width_Right_Side.hasError('required')"><i class="fa fa-info-circle"></i> Minimum Seal width Right Side is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="maximimSealwidthRightSide">Maximim Seal width Right Side</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Maximim Seal width Right Side"
+                                                            [(ngModel)]="maximimSealwidthRightSide" name="maximimSealwidthRightSide" required
+                                                            #maximim_Seal_width_Right_Side="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="maximim_Seal_width_Right_Side.valid || maximim_Seal_width_Right_Side.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!maximim_Seal_width_Right_Side.hasError('required')"><i class="fa fa-info-circle"></i> Maximim Seal width Right Side is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="minimumSealwidthLeftSide">Minimum Seal width Left Side</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Minimum Seal width Left Side"
+                                                            [(ngModel)]="minimumSealwidthLeftSide" name="minimumSealwidthLeftSide" required
+                                                            #minimum_Seal_width_Left_Side="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="minimum_Seal_width_Left_Side.valid || minimum_Seal_width_Left_Side.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!minimum_Seal_width_Left_Side.hasError('required')"><i class="fa fa-info-circle"></i> Minimum Seal width Left Side is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 d-flex justify-content-center align-items-center">
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+                                                            <label for="maximumSealwidthLeftSide">Maximum Seal width Left Side</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <input type="text" class="form-control input_BOX input-box-text-style" placeholder="Maximum Seal width Left Side"
+                                                            [(ngModel)]="maximumSealwidthLeftSide" name="maximumSealwidthLeftSide" required
+                                                            #maximum_Seal_width_Left_Side="ngModel">
+                                                            <div class="input-group m-t-5 m-b-5">
+                                                                <div [hidden]="maximum_Seal_width_Left_Side.valid || maximum_Seal_width_Left_Side.pristine" class="custom_alert custom_alert-danger m-t-5">
+                                                                    <div style="font-size: 13px;" [hidden]="!maximum_Seal_width_Left_Side.hasError('required')"><i class="fa fa-info-circle"></i> Maximum Seal width Left Side is required
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Basic Setup -->
+
+                    <!-- Digital Output -->
+                    <div class="m-t-20 ">
+                        <div class="card customBoxShadow">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xlg-12">
+                                        <div class="ProductHeading">Digital Output</div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                            </div>
+
+                                            <div class="col-md-10 col-lg-10 col-sm-12 col-xlg-10">
+
+                                                <div class="">
+                                                    <table class="table table-bordered digitalTR">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="conveyorControlth" ></th>
+                                                                <th class="text-center conveyorControlth">Stop</th>
+                                                                <th class="text-center conveyorControlth">D01</th>
+                                                                <th class="conveyorControlth" >D02</th>
+                                                                <th class="text-center conveyorControlth">D03</th>
+                                                                <th class="text-center conveyorControlth">D04</th>
+                                                                <th class="conveyorControlth" >D05</th>
+                                                                <th class="text-center conveyorControlth">D06</th>
+                                                                <th class="text-center conveyorControlth">D07</th>
+                                                                <th class="text-center conveyorControlth">D08</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr >
+                                                                <td class="conveyorControltd">XRAY ON</td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isXRAYONstop,'XRAYON-stop')">
+                                                                    <span *ngIf="isXRAYONstop">
+                                                                        <span class="dot"></span>
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isXRAYONDO1,'XRAYON-DO1')">
+                                                                    <span *ngIf="isXRAYONDO1">
+                                                                        <span class="dot"></span>
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isXRAYONDO2,'XRAYON-DO2')">
+                                                                    <span *ngIf="isXRAYONDO2">
+                                                                        <span class="dot"></span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isXRAYONDO3,'XRAYON-DO3')">
+                                                                    <span *ngIf="isXRAYONDO3">
+                                                                        <span class="dot"></span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isXRAYONDO4,'XRAYON-DO4')">
+                                                                    <span *ngIf="isXRAYONDO4">
+                                                                        <span class="dot"></span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isXRAYONDO5,'XRAYON-DO5')">
+                                                                    <span *ngIf="isXRAYONDO5">
+                                                                        <span class="dot"></span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isXRAYONDO6,'XRAYON-DO6')">
+                                                                    <span *ngIf="isXRAYONDO6">
+                                                                        <span class="dot"></span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isXRAYONDO7,'XRAYON-DO7')">
+                                                                    <span *ngIf="isXRAYONDO7">
+                                                                        <span class="dot"></span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isXRAYONDO8,'XRAYON-DO8')">
+                                                                    <span *ngIf="isXRAYONDO8">
+                                                                        <span class="dot"></span>
+                                                                    </span>    
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                            <td class="conveyorControltd">Error</td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isERRORstop,'ERROR-stop')">
+                                                                <span *ngIf="isERRORstop">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isERRORDO1,'ERROR-DO1')">
+                                                                <span *ngIf="isERRORDO1">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isERRORDO2,'ERROR-DO2')">
+                                                                <span *ngIf="isERRORDO2">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isERRORDO3,'ERROR-DO3')">
+                                                                <span *ngIf="isERRORDO3">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isERRORDO4,'ERROR-DO4')">
+                                                                <span *ngIf="isERRORDO4">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isERRORDO5,'ERROR-DO5')">
+                                                                <span *ngIf="isERRORDO5">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isERRORDO6,'ERROR-DO6')">
+                                                                <span *ngIf="isERRORDO6">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isERRORDO7,'ERROR-DO7')">
+                                                                <span *ngIf="isERRORDO7">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isERRORDO8,'ERROR-DO8')">
+                                                                <span *ngIf="isERRORDO8">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="conveyorControltd">E-Stop</td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isEstop,'E-stop')">
+                                                                <span *ngIf="isEstop">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isEDO1,'E-DO1')">
+                                                                <span *ngIf="isEDO1">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isEDO2,'E-DO2')">
+                                                                <span *ngIf="isEDO2">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isEDO3,'E-DO3')">
+                                                                <span *ngIf="isEDO3">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isEDO4,'E-DO4')">
+                                                                <span *ngIf="isEDO4">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isEDO5,'E-DO5')">
+                                                                <span *ngIf="isEDO5">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isEDO6,'E-DO6')">
+                                                                <span *ngIf="isEDO6">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isEDO7,'E-DO7')">
+                                                                <span *ngIf="isEDO7">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isEDO8,'E-DO8')">
+                                                                <span *ngIf="isEDO8">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="conveyorControltd">Conveyor Running</td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isConveyorRunningstop,'ConveyorRunning-stop')">
+                                                                <span *ngIf="isConveyorRunningstop">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isConveyorRunningDO1,'ConveyorRunning-DO1')">
+                                                                <span *ngIf="isConveyorRunningDO1">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isConveyorRunningDO2,'ConveyorRunning-DO2')">
+                                                                <span *ngIf="isConveyorRunningDO2">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isConveyorRunningDO3,'ConveyorRunning-DO3')">
+                                                                <span *ngIf="isConveyorRunningDO3">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isConveyorRunningDO4,'ConveyorRunning-DO4')">
+                                                                <span *ngIf="isConveyorRunningDO4">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isConveyorRunningDO5,'ConveyorRunning-DO5')">
+                                                                <span *ngIf="isConveyorRunningDO5">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isConveyorRunningDO6,'ConveyorRunning-DO6')">
+                                                                <span *ngIf="isConveyorRunningDO6">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isConveyorRunningDO7,'ConveyorRunning-DO7')">
+                                                                <span *ngIf="isConveyorRunningDO7">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isConveyorRunningDO8,'ConveyorRunning-DO8')">
+                                                                <span *ngIf="isConveyorRunningDO8">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="conveyorControltd">Seal Defect</td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isSealDefectstop,'SealDefect-stop')">
+                                                                <span *ngIf="isSealDefectstop">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isSealDefectDO1,'SealDefect-DO1')">
+                                                                <span *ngIf="isSealDefectDO1">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isSealDefectDO2,'SealDefect-DO2')">
+                                                                <span *ngIf="isSealDefectDO2">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isSealDefectDO3,'SealDefect-DO3')">
+                                                                <span *ngIf="isSealDefectDO3">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isSealDefectDO4,'SealDefect-DO4')">
+                                                                <span *ngIf="isSealDefectDO4">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isSealDefectDO5,'SealDefect-DO5')">
+                                                                <span *ngIf="isSealDefectDO5">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isSealDefectDO6,'SealDefect-DO6')">
+                                                                <span *ngIf="isSealDefectDO6">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isSealDefectDO7,'SealDefect-DO7')">
+                                                                <span *ngIf="isSealDefectDO7">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight" (click)="digitalOutputValChange(isSealDefectDO8,'SealDefect-DO8')">
+                                                                <span *ngIf="isSealDefectDO8">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="conveyorControltd">Foreign Material Defect</td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isForeignMaterialDefectstop,'ForeignMaterialDefect-stop')">
+                                                                <span *ngIf="isForeignMaterialDefectstop">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isForeignMaterialDefectDO1,'ForeignMaterialDefect-DO1')">
+                                                                <span *ngIf="isForeignMaterialDefectDO1">
+                                                                    <span class="dot"></span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isForeignMaterialDefectDO2,'ForeignMaterialDefect-DO2')">
+                                                                <span *ngIf="isForeignMaterialDefectDO2">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isForeignMaterialDefectDO3,'ForeignMaterialDefect-DO3')">
+                                                                <span *ngIf="isForeignMaterialDefectDO3">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isForeignMaterialDefectDO4,'ForeignMaterialDefect-DO4')">
+                                                                <span *ngIf="isForeignMaterialDefectDO4">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isForeignMaterialDefectDO5,'ForeignMaterialDefect-DO5')">
+                                                                <span *ngIf="isForeignMaterialDefectDO5">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isForeignMaterialDefectDO6,'ForeignMaterialDefect-DO6')">
+                                                                <span *ngIf="isForeignMaterialDefectDO6">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isForeignMaterialDefectDO7,'ForeignMaterialDefect-DO7')">
+                                                                <span *ngIf="isForeignMaterialDefectDO7">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                            <td class="text-center fontweight conveyorControlth" (click)="digitalOutputValChange(isForeignMaterialDefectDO8,'ForeignMaterialDefect-DO8')">
+                                                                <span *ngIf="isForeignMaterialDefectDO8">
+                                                                    <span class="dot"></span>
+                                                                </span>    
+                                                            </td>
+                                                        </tr>
+                                                            <tr >
+                                                                <td class="conveyorControltd" style="line-height: 0;">Delat Time[s]</td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="delatTimeStop" name="delatTimeStop"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="delatTimeD01" name="delatTimeD01"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="delatTimeD02" name="delatTimeD02"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="delatTimeD03" name="delatTimeD03"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="delatTimeD04" name="delatTimeD04"></td>
+                                                                <td class="text-center fontweight" ><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="delatTimeD05" name="delatTimeD05"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="delatTimeD06" name="delatTimeD06"> </td>
+                                                                <td class="text-center fontweight" ><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="delatTimeD07" name="delatTimeD07"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="delatTimeD08" name="delatTimeD08"></td>
+                                                            </tr>
+                                                            <tr >
+                                                                <td class="conveyorControltd " style="line-height: 0;">Hold Time[s]</td>
+                                                                 <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="holdTimeStop" name="holdTimeStop"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="holdTimeD01" name="holdTimeD01"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="holdTimeD02" name="holdTimeD02"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="holdTimeD03" name="holdTimeD03"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="holdTimeD04" name="holdTimeD04"></td>
+                                                                <td class="text-center fontweight" ><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="holdTimeD05" name="holdTimeD05"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="holdTimeD06" name="holdTimeD06"> </td>
+                                                                <td class="text-center fontweight" ><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="holdTimeD07" name="holdTimeD07"></td>
+                                                                <td class="text-center fontweight"><input type="text" class="input-box-text-style digitalOutput" [(ngModel)]="holdTimeD08" name="holdTimeD08"></td>
+                                                            </tr>
+                                                            <tr class="polaritiestextStyle">
+                                                                <td class="conveyorControltd" style="font-size: 16px;">Polarity</td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isPolaritystop,'Polarity-stop')">
+                                                                    <span *ngIf="isPolaritystop">
+                                                                        <span>+</span>
+                                                                    </span>
+                                                                    <span *ngIf="!isPolaritystop">
+                                                                        <span>-</span>
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isPolarityDO1,'Polarity-DO1')">
+                                                                    <span *ngIf="isPolarityDO1">
+                                                                        <span>+</span>
+                                                                    </span>
+                                                                    <span *ngIf="!isPolarityDO1">
+                                                                        <span>-</span>
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isPolarityDO2,'Polarity-DO2')">
+                                                                    <span *ngIf="isPolarityDO2">
+                                                                        <span>+</span>
+                                                                    </span>
+                                                                    <span *ngIf="!isPolarityDO2">
+                                                                        <span>-</span>
+                                                                    </span>   
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isPolarityDO3,'Polarity-DO3')">
+                                                                    <span *ngIf="isPolarityDO3">
+                                                                        <span>+</span>
+                                                                    </span>
+                                                                    <span *ngIf="!isPolarityDO3">
+                                                                        <span>-</span>
+                                                                    </span>   
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isPolarityDO4,'Polarity-DO4')">
+                                                                    <span *ngIf="isPolarityDO4">
+                                                                        <span>+</span>
+                                                                    </span>
+                                                                    <span *ngIf="!isPolarityDO4">
+                                                                        <span>-</span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isPolarityDO5,'Polarity-DO5')">
+                                                                    <span *ngIf="isPolarityDO5">
+                                                                        <span>+</span>
+                                                                    </span>
+                                                                    <span *ngIf="!isPolarityDO5">
+                                                                        <span>-</span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isPolarityDO6,'Polarity-DO6')">
+                                                                    <span *ngIf="isPolarityDO6">
+                                                                        <span>+</span>
+                                                                    </span>
+                                                                    <span *ngIf="!isPolarityDO6">
+                                                                        <span>-</span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isPolarityDO7,'Polarity-DO7')">
+                                                                    <span *ngIf="isPolarityDO7">
+                                                                        <span>+</span>
+                                                                    </span>
+                                                                    <span *ngIf="!isPolarityDO7">
+                                                                        <span>-</span>
+                                                                    </span>    
+                                                                </td>
+                                                                <td class="text-center fontweight" (click)="digitalOutputValChange(isPolarityDO8,'Polarity-DO8')">
+                                                                    <span *ngIf="isPolarityDO8">
+                                                                        <span>+</span>
+                                                                    </span>
+                                                                    <span *ngIf="!isPolarityDO8">
+                                                                        <span>-</span>
+                                                                    </span>   
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 col-lg-1col-sm-12 col-xlg-1">
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                            </div>
+                                            <div class="col-lg-10">
+                                                <button  (click)="addProductDetails();" [disabled]="!editProductForm.valid" class="btn float-right btn-info m-l-20"><i class="fa fa-save mr-2"></i>Add Product</button>
+                                                <button  (click)="gotoProductList();" class="btn float-right btn-danger m-l-20"><i class="fa fa-times mr-2"></i>Cancel</button>
+                                            
+                                            </div>
+                                            <div class="col-md-1 col-lg-1 col-sm-12 col-xlg-1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Digital Outputs -->
+                </form>
             </div>
         </div>
         <!-- new code end -->

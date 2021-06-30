@@ -25,7 +25,12 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {  componentsModule  } from './components/components.module';
 
-
+import { MqttModule, IMqttServiceOptions } from "ngx-mqtt";
+export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+  hostname: 'test.mosquitto.org',
+  port: 8080,
+  path: '/mqtt'
+}
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -44,6 +49,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidebarComponent,
   ],
   imports: [
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     componentsModule,
     ToastrModule.forRoot(),
     BrowserModule,
@@ -73,7 +79,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     
   ],
   bootstrap: [AppComponent],
-  exports: [urlPipesModule,componentsModule]
+  exports: [urlPipesModule,componentsModule,RouterModule
+]
 })
 export class AppModule {
   constructor(){

@@ -3,10 +3,13 @@
 }
 
 .flexcontenersideBar{
-  margin-top: 70px;
+  /* margin-top: 70px; */
+  position: fixed;
+  left: 16px;
+  top: 62px;
 }
 .flexcontener{
-  margin-top: 70px;
+  margin-top: 34px;
  
  
 }
@@ -102,6 +105,8 @@ tr{
 }
 .backgroundLightGray{
   background-color: #ebebeb73;
+  height: auto;
+  padding-bottom: 6px;
 }
 .backgroundColorWhite{
   background-color: #fff;
@@ -260,7 +265,7 @@ label{
 }
 
 .ProductImageStyle{
-  font-size: 12px; 
+  font-size: 14px; 
   font-weight: 500;
 }
 
@@ -271,12 +276,47 @@ label{
 }
 
 .dot {
-  height: 18px;
-  width: 18px;
+  height: 12px;
+  width: 12px;
   background-color: gray;
   border-radius: 50%;
   display: inline-block;
 }
 .fontweight{
   font-weight: 600;
+}
+.customDisplayPro{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.ProductHeading{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  background: #f6f6f6;
+  color: gray;
+  padding: 4px 172px;
+  box-shadow: 0px 0px 2px 0px grey;
+  margin-bottom: 1.25rem;
+}
+.card {
+  margin-bottom: 5px !important;
+}
+.digitalOutput{
+  padding: 2px 5px;
+  width: 100%;
+  font-weight: 600;
+  border: none;
+  text-align: center;
+}
+.digitalTR tr{
+  white-space: nowrap;
+}
+
+.polaritiestextStyle td{
+font-size: 22px;
 }

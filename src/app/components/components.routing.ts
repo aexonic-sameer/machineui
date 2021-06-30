@@ -11,6 +11,8 @@ import { productlistComponent } from './product-tree/product-list/product-list.c
 import { productaddComponent } from './product-tree/product-add/product-add.component';
 import { settingsComponent } from './settings/settings.component';
 import { producteditComponent } from './product-tree/product-edit/product-edit.component';
+import { productViewComponent } from './product-tree/product-view/product-view.component';
+import { productcloneComponent } from './product-tree/product-clone/product-clone.component';
 export const ComponentsRoutes: Routes = [
   {
     path: '',
@@ -94,6 +96,24 @@ export const ComponentsRoutes: Routes = [
       {
         path: 'product-edit',
         component: producteditComponent
+      },
+    ]
+  },
+  {
+    path: '',
+    children: [
+      {
+        path: 'product-view',
+        component: productViewComponent
+      },
+    ]
+  },
+  {
+    path: '',
+    children: [
+      {
+        path: 'product-clone',
+        component: productcloneComponent
       },
     ]
   },

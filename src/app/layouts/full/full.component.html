@@ -50,6 +50,45 @@
         </nav>
     </header>
   
+    <!-- <aside class="left-sidebar">
+        <div class="scroll-sidebar">
+           <nav class="sidebar-nav">
+              <ul id="sidebarnav">
+                 <li [ngClass]="{'active': menus[2]}">
+                    <a (click)="navmenuclick(2)" class="has-arrow" [attr.aria-expanded]="true ? menus[2]:true"><i class="fa fa-users m-r-5" aria-hidden="true"></i><span class="hide-menu">Customers</span></a>
+                    <ul *ngIf=menus[2] class="collapse in">
+                       <li><a [ngClass]="{'active': submenu['2.0']}" ><i class="fa fa-caret-right m-r-5"></i>Manage Customers</a></li>
+                       <li><a [ngClass]="{'active': submenu['2.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add Customer</a></li>
+                    </ul>
+                 </li>
+                 <li [ngClass]="{'active': menus[3]}">
+                    <a (click)="navmenuclick(3)" class="has-arrow" [attr.aria-expanded]="true ? menus[3]:true"><i class="fa fa-user-plus m-r-5" aria-hidden="true"></i><span class="hide-menu">Staff</span></a>
+                    <ul *ngIf=menus[3] class="collapse in">
+                       <li><a [ngClass]="{'active': submenu['3.0']}" ><i class="fa fa-caret-right m-r-5"></i>Manage Staff</a></li>
+                       <li><a [ngClass]="{'active': submenu['3.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add Staff</a></li>
+                    </ul>
+                 </li>
+                 <li [ngClass]="{'active': menus[4]}">
+                    <a (click)="navmenuclick(4)" class="has-arrow" [attr.aria-expanded]="true ? menus[4]:true"><i class="fa fa-files-o m-r-5" aria-hidden="true"></i><span class="hide-menu">Pages</span></a>
+                    <ul *ngIf=menus[4] class="collapse in" aria-expanded="false">
+                       <li><a [ngClass]="{'active': submenu['4.0']}" ><i class="fa fa-caret-right m-r-5"></i>All Pages</a></li>
+                       <li><a [ngClass]="{'active': submenu['4.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add New Page</a></li>
+                    </ul>
+                 </li>
+                 <li [ngClass]="{'active': menus[5]}">
+                    <a (click)="navmenuclick(5)" class="has-arrow" [attr.aria-expanded]="true ? menus[5]:true"><i class="fa fa-files-o m-r-5" aria-hidden="true"></i><span class="hide-menu">Pages</span></a>
+                    <ul *ngIf=menus[5] class="collapse in" aria-expanded="false">
+                       <li><a [ngClass]="{'active': submenu['5.0']}" ><i class="fa fa-caret-right m-r-5"></i>Deepus Pages</a></li>
+                       <li><a [ngClass]="{'active': submenu['5.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add New Page</a></li>
+                    </ul>
+                 </li>
+              </ul>
+           </nav>
+        </div>
+      </aside> -->
+
+
+
    
     <!-- ============================================================== -->
     <!-- Left Sidebar - style you can find in sidebar.scss  -->

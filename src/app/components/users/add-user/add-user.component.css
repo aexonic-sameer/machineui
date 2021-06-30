@@ -32,7 +32,10 @@
 }
 
 .flexcontenersideBar{
-    margin-top: 70px;
+    /* margin-top: 70px; */
+    position: fixed;
+    left: 16px;
+    top: 62px;
 }
 .flexcontener{
     margin-top: 110px;
@@ -47,6 +50,8 @@
 
 .backgroundLightGray{
     background-color: #8080800f;
+    height: 100vh;
+    padding-bottom: 6px;
 }
 .backgroundColorWhite{
     background-color: #fff;

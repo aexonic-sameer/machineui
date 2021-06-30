@@ -12,9 +12,7 @@ export class FullComponent implements OnInit {
   showSettings = false;
   showMinisidebar = false;
   showDarktheme = false;
-
   public innerWidth: any;
-
   public config: PerfectScrollbarConfigInterface = {};
 
   constructor(public router: Router) {}
@@ -43,6 +41,7 @@ export class FullComponent implements OnInit {
       this.showMinisidebar = false;
     }
   }
+
   goToHomePage(){
     this.router.navigate(['/bi/home']);
   }

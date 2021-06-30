@@ -1,19 +1,16 @@
 
 .sidebarClass{
-display: flex;
-flex-direction: column;
-flex-wrap: nowrap;
-align-content: center;
-justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .sidebarImageIcon{
-    width: 100%;
+    width: 80%;
     height: auto;
     padding: .5rem 1rem;
-    /* width: 110px;
-    height: auto;
-    padding: .5rem 1rem; */
 }
 .customPadding{
     padding: .6rem .6rem;

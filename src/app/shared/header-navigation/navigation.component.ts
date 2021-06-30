@@ -1,79 +1,92 @@
-import { Component, AfterViewInit, EventEmitter, Output ,OnInit, ViewChild, ElementRef  } from '@angular/core';
-import {  NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, AfterViewInit,OnInit, EventEmitter, Output } from '@angular/core';
+import {  NgbModal, ModalDismissReasons,  NgbPanelChangeEvent,  NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-declare var $: any;
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AuthenticationService } from '../../services/authntication.service';
-import { environment } from '../../../environments/environment';
-import { TranslateService } from '@ngx-translate/core';
-
-
-
-
+declare var $: any;
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css'],
-  providers: [ TranslateService]
+  styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
   @Output() toggleSidebar = new EventEmitter<void>();
   public config: PerfectScrollbarConfigInterface = {};
-  public UserDetail: any;
-  public userrole: any;
-  public email: any;
-  public name: any;
-  public authUserUID:any;
-  public myProfileboolean:boolean = false;
-  private analyticsURL: String = environment.analyticsURL;
-  iframeUrl: any;
+  public userRole:any;
+  public accessLevel:any;
+  public UID:any;
   public showSearch = false;
-  options:any =[];
-  selectedValue:any;
-  languageID:any;
-  public isLoading:boolean;
-public srcuRl:any = 'https://miro.medium.com/fit/c/160/160/1*tAsmdxlEMMP6pRqRH4vF4A.jpeg'
+  public pstTime:any;
+  public menus = new Array();
+  public submenu = new Array();
+  constructor(private modalService: NgbModal,private router: Router,private toastr: ToastrService) {
+    this.UID = localStorage.getItem('uID');
+		if (this.UID == '' || this.UID == null || this.UID == undefined) {
+			this.toastr.error('Failed, Something went wrong');
+			this.router.navigate(['/authentication/login']);
+		} else {
+      let userrole = localStorage.getItem('userRole')
+		  this.userRole = userrole.toUpperCase()
+      this.accessLevel = localStorage.getItem('accessLevel');
+		}
+  }
+  ngOnInit(): void {
+    let propertyListForEmail = setInterval(() => this.currentPstTime(), 2000)
+		setTimeout(() => {
+			this.currentPstTime();
+		}, 3000)
+  }
 
-  constructor(public translate: TranslateService,  private modalService: NgbModal,private router: Router,private toastr: ToastrService,private _authenticationService: AuthenticationService) {
+  navmenuclick(value){
+    for(let i= 0; i<6; i++){
+      if(i != value){
+          this.menus[i] = false;  
+          /*Submenu Code Start*/
+          this.submenu[i+'.'+0] = false;
+          this.submenu[i+'.'+1] = false;
+          /*Submenu Code Close*/
+      }
+    }
+    if(this.menus[value] == true){
+      this.menus[value] = false;  
+    }else{
+      this.menus[value] = true;  
+    }
+ }
+
+
+
+
+
+
+
+  currentPstTime(){
+    let d = new Date();
+    let localTime = d.getTime();
+    let localOffset = d.getTimezoneOffset() * 60000;
+    let utc = localTime + localOffset;
+    let target_offset = -7;//PST from UTC 7 hours behind right now, will need to fix for daylight
+    let los_angles = utc+(3600000*target_offset);
+    this.pstTime = new Date(los_angles);
     
+}
+ 
+  logOut(){
+    this.router.navigate(['/authentication/login']);
   }
-  LanguageChangeFunction(selectedValue:string){
-      this.languageID = selectedValue;
-      if (this.languageID == 1) {
-        this.translate.use('US/en');
-      }
-      else if (this.languageID == 2) {
-          this.translate.use('HI/hi');
-      }
-	  }
-
-    ngOnInit() {
-  
-  }
-
-  logout(){
-    this.isLoading = true;
-    this.iframeUrl = this.analyticsURL+"/auth/logout";
-    setTimeout(()=>{
-    localStorage.clear(); 
-    this.router.navigate(['/authentication/login']);  
-    this.isLoading = false;
-			}, 5000);
-    //  = this.analyticsURL+"/auth/logout";
-  
-  }
-  ManageUserFunction(){
-    this.router.navigate(['/bi/user-management']);
-  }
-  myProfileFunction(){
-    this.router.navigate(['/authentication/update-password']);
+  goToUsers(){
+    this.router.navigate(["/machine/user-management"]);
   }
   goToHome(){
-    this.router.navigate(['/bi/landing']);
-	}
-
-
-
-
+    this.router.navigate(["/machine/home"]);
+  }
+  goToProducts(){
+    this.router.navigate(["/machine/product"]);
+  }
+  goTostatisticalhistory(){
+    this.router.navigate(["/machine/statistical-history"]);
+  }
+  goToSettings(){
+    this.router.navigate(["/machine/settings"]);
+  }
 }

@@ -1,51 +1,148 @@
 <!-- ============================================================== -->
 <!-- toggle and nav items -->
 <!-- ============================================================== -->
+
 <ul class="navbar-nav mr-auto float-left">                
     <!-- <li (click)="toggleSidebar.emit()" class="nav-item m-l-10"> <a class="nav-link sidebartoggler text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li> -->
+    <li class="nav-item dropdown mega-dropdown" style="margin-left: 21px;" ngbDropdown [autoClose]="true"> <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark" style="margin-top: 5px;" href="javascript:void(0)"><i class="ti-menu" style="font-size: 18px;"></i></a>
+        <div class="dropdown-menu animated slideInDown" ngbDropdownMenu >
+            <ul class="mega-dropdown-menu row">
+                <div class="wrapper1">
+                    <div class="sidebar1">
+                        <ul>
+                            <li class="cursorPointer" (click)="goToHome();"><a><img src="assets/images/sideMenu/home.png"   class="sidebarImageIcon" alt="medifast"/>Home</a></li>
+                            <li class="cursorPointer" (click)="goToProducts();"><a><img src="assets/images/sideMenu/package.png" class="sidebarImageIcon" alt="medifast"/>Product</a></li>
+                            <li class="cursorPointer" (click)="goToUsers();"><a><img src="assets/images/sideMenu/profile.png"  class="sidebarImageIcon" alt="medifast"/>User</a></li>
+                            <li class="cursorPointer" ><a><img src="assets/images/sideMenu/cloud.png" class="sidebarImageIcon" alt="medifast"/>Cloud</a></li>
+                            <li class="cursorPointer"><a><img src="assets/images/sideMenu/key.png" class="sidebarImageIcon" alt="medifast"/>Perform Validation</a></li>
+                            <li class="cursorPointer" (click)="goTostatisticalhistory();"><a><img src="assets/images/sideMenu/bar.png"  class="sidebarImageIcon" alt="medifast"/>Statistical History</a></li>
+                            <li class="cursorPointer" (click)="goToSettings();"><a><img src="assets/images/sideMenu/setting.png" class="sidebarImageIcon" alt="medifast"/>Settings</a></li>
+                        </ul>
+                      
+                        <!-- <ul id="sidebarnav">
+                            <li [ngClass]="{'active': menus[2]}">
+                               <a (click)="navmenuclick(2)" class="has-arrow" [attr.aria-expanded]="true ? menus[2]:true">
+                                  
+                                   <img src="assets/images/sideMenu/home.png"   class="sidebarImageIcon" alt="medifast"/>
+                                   <span class="hide-menu">Home</span></a>
+                               <ul *ngIf=menus[2] class="collapse in">
+                                  <li><a [ngClass]="{'active': submenu['2.0']}" >Manage Customers</a></li>
+                                  <li><a [ngClass]="{'active': submenu['2.1']}" >Add Customer</a></li>
+                               </ul>
+                            </li>
+                            <li [ngClass]="{'active': menus[3]}">
+                               <a (click)="navmenuclick(3)" class="has-arrow" [attr.aria-expanded]="true ? menus[3]:true"><i class="fa fa-user-plus m-r-5" aria-hidden="true"></i><span class="hide-menu">Staff</span></a>
+                               <ul *ngIf=menus[3] class="collapse in">
+                                  <li><a [ngClass]="{'active': submenu['3.0']}" ><i class="fa fa-caret-right m-r-5"></i>Manage Staff</a></li>
+                                  <li><a [ngClass]="{'active': submenu['3.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add Staff</a></li>
+                               </ul>
+                            </li>
+                            <li [ngClass]="{'active': menus[4]}">
+                               <a (click)="navmenuclick(4)" class="has-arrow" [attr.aria-expanded]="true ? menus[4]:true"><i class="fa fa-files-o m-r-5" aria-hidden="true"></i><span class="hide-menu">Pages</span></a>
+                               <ul *ngIf=menus[4] class="collapse in" aria-expanded="false">
+                                  <li><a [ngClass]="{'active': submenu['4.0']}" ><i class="fa fa-caret-right m-r-5"></i>All Pages</a></li>
+                                  <li><a [ngClass]="{'active': submenu['4.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add New Page</a></li>
+                               </ul>
+                            </li>
+                            <li [ngClass]="{'active': menus[5]}">
+                               <a (click)="navmenuclick(5)" class="has-arrow" [attr.aria-expanded]="true ? menus[5]:true"><i class="fa fa-files-o m-r-5" aria-hidden="true"></i><span class="hide-menu">Pages</span></a>
+                               <ul *ngIf=menus[5] class="collapse in" aria-expanded="false">
+                                  <li><a [ngClass]="{'active': submenu['5.0']}" ><i class="fa fa-caret-right m-r-5"></i>Deepus Pages</a></li>
+                                  <li><a [ngClass]="{'active': submenu['5.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add New Page</a></li>
+                               </ul>
+                            </li>
+                         </ul> -->
+                   
+                        </div>
+                 </div> 
+               
+            </ul>
+
+
+
+           <!-- <aside class="left-sidebar">
+        <div class="scroll-sidebar">
+           <nav class="sidebar-nav">
+              <ul id="sidebarnav">
+                 <li [ngClass]="{'active': menus[2]}">
+                    <a (click)="navmenuclick(2)" class="has-arrow" [attr.aria-expanded]="true ? menus[2]:true"><i class="fa fa-users m-r-5" aria-hidden="true"></i><span class="hide-menu">Customers</span></a>
+                    <ul *ngIf=menus[2] class="collapse in">
+                       <li><a [ngClass]="{'active': submenu['2.0']}" ><i class="fa fa-caret-right m-r-5"></i>Manage Customers</a></li>
+                       <li><a [ngClass]="{'active': submenu['2.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add Customer</a></li>
+                    </ul>
+                 </li>
+                 <li [ngClass]="{'active': menus[3]}">
+                    <a (click)="navmenuclick(3)" class="has-arrow" [attr.aria-expanded]="true ? menus[3]:true"><i class="fa fa-user-plus m-r-5" aria-hidden="true"></i><span class="hide-menu">Staff</span></a>
+                    <ul *ngIf=menus[3] class="collapse in">
+                       <li><a [ngClass]="{'active': submenu['3.0']}" ><i class="fa fa-caret-right m-r-5"></i>Manage Staff</a></li>
+                       <li><a [ngClass]="{'active': submenu['3.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add Staff</a></li>
+                    </ul>
+                 </li>
+                 <li [ngClass]="{'active': menus[4]}">
+                    <a (click)="navmenuclick(4)" class="has-arrow" [attr.aria-expanded]="true ? menus[4]:true"><i class="fa fa-files-o m-r-5" aria-hidden="true"></i><span class="hide-menu">Pages</span></a>
+                    <ul *ngIf=menus[4] class="collapse in" aria-expanded="false">
+                       <li><a [ngClass]="{'active': submenu['4.0']}" ><i class="fa fa-caret-right m-r-5"></i>All Pages</a></li>
+                       <li><a [ngClass]="{'active': submenu['4.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add New Page</a></li>
+                    </ul>
+                 </li>
+                 <li [ngClass]="{'active': menus[5]}">
+                    <a (click)="navmenuclick(5)" class="has-arrow" [attr.aria-expanded]="true ? menus[5]:true"><i class="fa fa-files-o m-r-5" aria-hidden="true"></i><span class="hide-menu">Pages</span></a>
+                    <ul *ngIf=menus[5] class="collapse in" aria-expanded="false">
+                       <li><a [ngClass]="{'active': submenu['5.0']}" ><i class="fa fa-caret-right m-r-5"></i>Deepus Pages</a></li>
+                       <li><a [ngClass]="{'active': submenu['5.1']}" ><i class="fa fa-caret-right m-r-5"></i>Add New Page</a></li>
+                    </ul>
+                 </li>
+              </ul>
+           </nav>
+        </div>
+      </aside> -->
+           
+        </div>
+    </li>
+
 </ul>
+
+
+
+
+
+
+
+
+
 <!-- ============================================================== -->
 <!-- User profile and search -->
 <!-- ============================================================== -->
-<ul class="navbar-nav my-lg-0 float-right" style="    margin-right: 22px;">
+<ul class="navbar-nav my-lg-0 float-right">
+    <li class="nav-item dropdown" style="width: 48rem;
+    margin-right: 11px;
+    margin-top: 14px;" ngbDropdown placement="bottom-right">
+        <span style="display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;">
+             <span class="tobbartextStyle">
+                {{pstTime | date:'MMMM d, y HH:mm:ss a '}}&nbsp;( PST )
+             </span>
+             <span class="tobbartextStyle">USER : {{userRole}}</span>
+             <span class="tobbartextStyle ssdStyle">SSD</span>
+             <!-- <button class="btn btn-light">SDD</button> -->
+        </span>
+     </li>
+ 
     <!-- ============================================================== -->
     <!-- Search -->
     <!-- ============================================================== -->
-    <li class="nav-item hidden-sm-down search-box" style="display: none;"> <a (click)="showSearch = !showSearch" class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+    <!-- <li class="nav-item hidden-sm-down search-box" > <a (click)="showSearch = !showSearch" class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
         <form class="app-search" [ngClass]="{'show-search': showSearch}">
             <input type="text" class="form-control" placeholder="Search & enter"> <a (click)="showSearch = !showSearch" class="srh-btn"><i class="ti-close"></i></a> </form>
-    </li>
-   
-
-
-    <li class="nav-item dropdown" style="width: 53rem; margin-right: 11px;" ngbDropdown placement="bottom-right">
-       <span style="display: flex;
-       flex-direction: row;
-       align-content: center;
-       justify-content: space-between;
-       align-items: center;
-       flex-wrap: nowrap;">
-            <span class="tobbartextStyle">10/13/2020 10:53:17</span>
-            <span class="tobbartextStyle">USER : ADMIN</span>
-            <span class="tobbartextStyle ssdStyle">SSD</span>
-            <!-- <button class="btn btn-light">SDD</button> -->
-       </span>
-    </li>
-
-
-
-
-
-
-
-
-
-
-
+    </li> -->
     <!-- ============================================================== -->
     <!-- Comment -->
     <!-- ============================================================== -->
-    <li class="nav-item dropdown" style="display: none;"  ngbDropdown placement="bottom-right">
+    <!-- <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
         <a ngbDropdownToggle class="nav-link text-muted text-muted waves-effect waves-dark" href="javascript:void(0)"> <i class="mdi mdi-message"></i>
             <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
         </a>
@@ -56,7 +153,7 @@
                 </li>
                 <li>
                     <div class="message-center" [perfectScrollbar]="config">
-                       <!-- Message -->
+                       
                         <a href="#" *ngFor="let notification of notifications">
                             <div class="round {{notification.round}}"><i class="{{notification.icon}}"></i></div>
                             <div class="mail-contnet m-l-10">
@@ -70,14 +167,14 @@
                 </li>
             </ul>
         </div>
-    </li>
+    </li> -->
     <!-- ============================================================== -->
     <!-- End Comment -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- Messages -->
     <!-- ============================================================== -->
-    <li class="nav-item dropdown" style="display: none;" ngbDropdown placement="bottom-right">
+    <!-- <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
         <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark" href="javascript:void(0)"> <i class="mdi mdi-email"></i>
             <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
         </a>
@@ -105,74 +202,24 @@
                 </li>
             </ul>
         </div>
-    </li>
+    </li> -->
     <!-- ============================================================== -->
     <!-- End Messages -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- Messages -->
     <!-- ============================================================== -->
-    <li class="nav-item dropdown mega-dropdown" style="display: none;" ngbDropdown [autoClose]="false"> <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-view-grid"></i></a>
+    <!-- <li class="nav-item dropdown mega-dropdown" ngbDropdown [autoClose]="false"> <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-view-grid" style="font-size: 28px;"></i></a>
         <div class="dropdown-menu animated slideInDown" ngbDropdownMenu >
+            <h2 class="text-center">Menu</h2>
             <ul class="mega-dropdown-menu row">
-                <li class="col-lg-3 col-xlg-2 m-b-30">
-                    <h4 class="m-b-20">CAROUSEL</h4>
-                    <!-- CAROUSEL -->
-                    <!-- <ngb-carousel>
-                      <ng-template ngbSlide>
-                        <img src="assets/images/big/img1.jpg" class="img-responsive" alt="Random first slide">
-                        <div class="carousel-caption">
-                          <h3 class="text-white font-bold">First slide label</h3>
-                          
-                        </div>
-                      </ng-template>
-                      <ng-template ngbSlide>
-                        <img src="assets/images/big/img2.jpg" class="img-responsive" alt="Random second slide">
-                        <div class="carousel-caption">
-                          <h3 class="text-white font-bold">Second slide label</h3>
-                          
-                        </div>
-                      </ng-template>
-                      <ng-template ngbSlide>
-                        <img src="assets/images/big/img3.jpg" class="img-responsive" alt="Random third slide">
-                        <div class="carousel-caption">
-                          <h3 class="text-white font-bold">Third slide label</h3>
-                          
-                        </div>
-                      </ng-template>
-                    </ngb-carousel> -->
-                    <!-- End CAROUSEL -->
-                    
-                </li>
-                <li class="col-lg-3 m-b-30">
-                    <h4 class="m-b-20">ACCORDION</h4>
-                    <!-- Accordian -->
-                    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" class="accordion nav-accordion">
-                      <ngb-panel title="Simple">
-                        <ng-template ngbPanelContent>
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
-                        </ng-template>
-                      </ngb-panel>
-                      <ngb-panel>
-                        <ng-template ngbPanelTitle>
-                          <span>&#9733; <b>Fancy</b> title &#9733;</span>
-                        </ng-template>
-                        <ng-template ngbPanelContent>
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                        </ng-template>
-                      </ngb-panel>
-                      <ngb-panel title="Disabled" [disabled]="true">
-                        <ng-template ngbPanelContent>
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
-                        </ng-template>
-                      </ngb-panel>
-                    </ngb-accordion>
-                </li>
-                
+            
+            
+               
                 
                 <li class="col-lg-3  m-b-30">
                     <h4 class="m-b-20">CONTACT US</h4>
-                    <!-- Contact -->
+                   
                     <form>
                         <div class="form-group">
                             <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
@@ -186,44 +233,33 @@
                 </li>
                 <li class="col-lg-3 col-xlg-4 m-b-30">
                     <h4 class="m-b-20">List style</h4>
-                    <!-- List style -->
+                    List style
                     <ul class="list-style-none">
-                        <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> You can give link</a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Give link</a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another Give link</a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Forth link</a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another fifth link</a></li>
+                        <li><a href="javascript:void(0)"> Home</a></li>
+                        <li><a href="javascript:void(0)">Product</a></li>
+                        <li><a href="javascript:void(0)"> Stastical History</a></li>
+                        <li><a href="javascript:void(0)"> Settings</a></li>
+                       
                     </ul>
                 </li>
             </ul>
         </div>
-    </li>
+    </li> -->
     <!-- ============================================================== -->
     <!-- End Messages -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- Profile -->
     <!-- ============================================================== -->
-
-
-
-    <!-- <select style="border: none;margin: 14px;color: #717171;" (change)="LanguageChangeFunction($event.target.value)">
-    <option  class="optionClass" *ngFor="let option of options" [value]="option.id"> {{option.name}}
-    </option>
-    </select>
-    <img src="assets/images/background/newLogo-removebg-preview.jpg" class="light-logo" style="width: 12rem;margin: 8px 6px;" alt="homepage" /> -->
-  
-    <!-- <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
-        <a ngbDropdownToggle class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img  [src]="srcuRl" alt="user" class="profile-pic" /></a>
+    <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/default_img.jpg" alt="user" class="profile-pic" /></a>
         <div class="dropdown-menu animated slideInDown" ngbDropdownMenu>
             <ul class="dropdown-user">
-                <li><a (click)="goToHome();" style="cursor: pointer !important;"><i class="fa fa-home mr-2"></i> {{'userdetails.Home' | translate}}</a></li>
-                <li ><a style="cursor: pointer !important;"><i class="ti-user" ></i>&nbsp; {{'userdetails.MyProfile' | translate}}</a></li>
-                <li *ngIf="myProfileboolean"><a (click)="ManageUserFunction()" style="cursor: pointer !important;"><i class="me-2 mdi mdi-account-multiple" ></i>&nbsp;{{'userdetails.ManageUser' | translate}}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a (click)="logout()" style="cursor: pointer !important;"><i class="fa fa-power-off"></i> &nbsp;{{'userdetails.Logout' | translate}}</a></li>
+              
+                <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+           
+                <li (click)="logOut();" style="cursor: pointer;"><a><i class="fa fa-power-off"></i> Logout</a></li>
             </ul>
         </div>
-    </li> -->
+    </li>
 </ul>
-<div *ngIf="isLoading" class="loading">Loading&#8230;</div>

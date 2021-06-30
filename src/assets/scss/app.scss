@@ -1880,10 +1880,16 @@ Megamenu
     width: 100%;
     
     .dropdown-menu {
-        width: 100%;
-        padding: 30px;
+        // width: 100%;
+        // padding: 30px;
+        // margin-top: 0px;
+        // left:0px!important;
+        width: 16%;
+        height: 100vh;
+        padding: 16px 24px;
         margin-top: 0px;
-        left:-213px!important;
+        left: 0px !important;
+        // background-color: #232f3e;
     }
     ul {
         padding: 0px;

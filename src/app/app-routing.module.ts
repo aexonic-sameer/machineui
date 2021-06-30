@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
+import { LoginComponent } from './authentication/login/login.component';
 export const Approutes: Routes = [
   
-  { path: '', redirectTo: '/authentication/login',  data: {
-    title: 'Greyscale AI',
-  }, pathMatch: 'full' },
+  { path: '', redirectTo: '/authentication/login',  pathMatch: 'full' },
   
  
+
   {
     path: '',
     component: FullComponent,
@@ -35,3 +35,4 @@ export const Approutes: Routes = [
     redirectTo: '/authentication/404'
   }
 ];
+

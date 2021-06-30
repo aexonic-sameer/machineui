@@ -7,13 +7,13 @@ import * as _ from 'lodash-es'
 import { Subscription } from 'rxjs';
 import { IMqttMessage, MqttService } from 'ngx-mqtt';
 @Component({
-  selector: 'app-product-edit',
-  templateUrl: './product-edit.component.html',
-  styleUrls: ['./product-edit.component.css'],
+  selector: 'app-product-clone',
+  templateUrl: './product-clone.component.html',
+  styleUrls: ['./product-clone.component.css'],
   providers: [AuthenticationService,ToasterMethods]
   
 })
-export class producteditComponent implements OnInit {
+export class productcloneComponent implements OnInit {
 	file_Input:any;
 	public updatedProductObj:any;
 	public UID:any;
@@ -158,6 +158,46 @@ export class producteditComponent implements OnInit {
 
 	ngOnInit() {
 	}
+	gotoProductList(){
+		this.router.navigate(['/machine/product']);
+	}
+	addCloneProductDetails(){
+		this.updatedProductObj = 
+			{
+				"number":this.productNumber,
+				"name":this.prodcutName,
+				"productCode":this.productCode,
+				"image": this.imageUrl,
+				"productlength":this.productlength,
+				"inspectionBeltSpeed":this.inspectionBeltSpeed,
+				"rejectorBeltSpeed":this.rejectorBeltSpeed,
+				"tubeVoltage":this.tubeVoltage,
+				"tubeCurrent":this.tubeCurrent,
+				"consecutivefailure":this.consecutivefailure,
+				"consecutiveVariable":this.consecutiveVariable,
+				"minimumSealwidthTop":this.minimumSealwidthTop,
+				"maximumSealwidthTop":this.maximumSealwidthTop,
+				"minimumSealwidthBottom":this.minimumSealwidthBottom,
+				"maximumSealWidthBottom":this.maximumSealWidthBottom,
+				"minimumSealwidthRightSide":this.minimumSealwidthRightSide,
+				"maximimSealwidthRightSide":this.maximimSealwidthRightSide,
+				"minimumSealwidthLeftSide":this.minimumSealwidthLeftSide,
+				"maximumSealwidthLeftSide":this.maximumSealwidthLeftSide
+			}
+		this._mqttService.unsafePublish('grayscale_addCloneProduct', JSON.stringify(this.updatedProductObj), { qos: 1, retain: false })
+		this.updateProductSubscription = this._mqttService.observe('grayscale_addCloneProduct').subscribe((message: IMqttMessage) => {
+			let obj = JSON.parse(message.payload.toString());
+			console.log(obj)
+			let res = true;
+			if(res){
+				this.toastr.success('Product added successfully');
+				this.router.navigate(["/machine/product"]);
+				this.updateProductSubscription.unsubscribe();
+				}else{
+				this.toastr.error('plese try again');
+			}
+	  });
+	}
 	digitalOutputValChange(item,val){
 
 		if(val == 'XRAYON-stop'){if(item){this.isXRAYONstop = false;}else{this.isXRAYONstop = true;}
@@ -191,83 +231,47 @@ export class producteditComponent implements OnInit {
 		}else if(val=='E-DO8'){if(item){this.isEDO8 = false;}else{this.isEDO8 = true;}	
 		}
 		else if(val == 'ConveyorRunning-stop'){if(item){this.isConveyorRunningstop = false;}else{this.isConveyorRunningstop = true;}
-		}else if(val=='ConveyorRunning-DO1'){if(item){this.isConveyorRunningDO1 = false;}else{this.isConveyorRunningDO1 = true;}
-		}else if(val=='ConveyorRunning-DO2'){if(item){this.isConveyorRunningDO2 = false;}else{this.isConveyorRunningDO2 = true;}
-		}else if(val=='ConveyorRunning-DO3'){if(item){this.isConveyorRunningDO3 = false;}else{this.isConveyorRunningDO3 = true;}
-		}else if(val=='ConveyorRunning-DO4'){if(item){this.isConveyorRunningDO4 = false;}else{this.isConveyorRunningDO4 = true;}
-		}else if(val=='ConveyorRunning-DO5'){if(item){this.isConveyorRunningDO5 = false;}else{this.isConveyorRunningDO5 = true;}
-		}else if(val=='ConveyorRunning-DO6'){if(item){this.isConveyorRunningDO6 = false;}else{this.isConveyorRunningDO6 = true;}
-		}else if(val=='ConveyorRunning-DO7'){if(item){this.isConveyorRunningDO7 = false;}else{this.isConveyorRunningDO7 = true;}
-		}else if(val=='ConveyorRunning-DO8'){if(item){this.isConveyorRunningDO8 = false;}else{this.isConveyorRunningDO8 = true;}	
+	}else if(val=='ConveyorRunning-DO1'){if(item){this.isConveyorRunningDO1 = false;}else{this.isConveyorRunningDO1 = true;}
+	}else if(val=='ConveyorRunning-DO2'){if(item){this.isConveyorRunningDO2 = false;}else{this.isConveyorRunningDO2 = true;}
+	}else if(val=='ConveyorRunning-DO3'){if(item){this.isConveyorRunningDO3 = false;}else{this.isConveyorRunningDO3 = true;}
+	}else if(val=='ConveyorRunning-DO4'){if(item){this.isConveyorRunningDO4 = false;}else{this.isConveyorRunningDO4 = true;}
+	}else if(val=='ConveyorRunning-DO5'){if(item){this.isConveyorRunningDO5 = false;}else{this.isConveyorRunningDO5 = true;}
+	}else if(val=='ConveyorRunning-DO6'){if(item){this.isConveyorRunningDO6 = false;}else{this.isConveyorRunningDO6 = true;}
+	}else if(val=='ConveyorRunning-DO7'){if(item){this.isConveyorRunningDO7 = false;}else{this.isConveyorRunningDO7 = true;}
+	}else if(val=='ConveyorRunning-DO8'){if(item){this.isConveyorRunningDO8 = false;}else{this.isConveyorRunningDO8 = true;}	
+	}
+	else if(val == 'SealDefect-stop'){if(item){this.isSealDefectstop = false;}else{this.isSealDefectstop = true;}
+	}else if(val=='SealDefect-DO1'){if(item){this.isSealDefectDO1 = false;}else{this.isSealDefectDO1 = true;}
+	}else if(val=='SealDefect-DO2'){if(item){this.isSealDefectDO2 = false;}else{this.isSealDefectDO2 = true;}
+	}else if(val=='SealDefect-DO3'){if(item){this.isSealDefectDO3 = false;}else{this.isSealDefectDO3 = true;}
+	}else if(val=='SealDefect-DO4'){if(item){this.isSealDefectDO4 = false;}else{this.isSealDefectDO4 = true;}
+	}else if(val=='SealDefect-DO5'){if(item){this.isSealDefectDO5 = false;}else{this.isSealDefectDO5 = true;}
+	}else if(val=='SealDefect-DO6'){if(item){this.isSealDefectDO6 = false;}else{this.isSealDefectDO6 = true;}
+	}else if(val=='SealDefect-DO7'){if(item){this.isSealDefectDO7 = false;}else{this.isSealDefectDO7 = true;}
+	}else if(val=='SealDefect-DO8'){if(item){this.isSealDefectDO8 = false;}else{this.isSealDefectDO8 = true;}	
+	}else if(val == 'ForeignMaterialDefect-stop'){if(item){this.isForeignMaterialDefectstop = false;}else{this.isForeignMaterialDefectstop = true;}
+	}else if(val=='ForeignMaterialDefect-DO1'){if(item){this.isForeignMaterialDefectDO1 = false;}else{this.isForeignMaterialDefectDO1 = true;}
+	}else if(val=='ForeignMaterialDefect-DO2'){if(item){this.isForeignMaterialDefectDO2 = false;}else{this.isForeignMaterialDefectDO2 = true;}
+	}else if(val=='ForeignMaterialDefect-DO3'){if(item){this.isForeignMaterialDefectDO3 = false;}else{this.isForeignMaterialDefectDO3 = true;}
+	}else if(val=='ForeignMaterialDefect-DO4'){if(item){this.isForeignMaterialDefectDO4 = false;}else{this.isForeignMaterialDefectDO4 = true;}
+	}else if(val=='ForeignMaterialDefect-DO5'){if(item){this.isForeignMaterialDefectDO5 = false;}else{this.isForeignMaterialDefectDO5 = true;}
+	}else if(val=='ForeignMaterialDefect-DO6'){if(item){this.isForeignMaterialDefectDO6 = false;}else{this.isForeignMaterialDefectDO6 = true;}
+	}else if(val=='ForeignMaterialDefect-DO7'){if(item){this.isForeignMaterialDefectDO7 = false;}else{this.isForeignMaterialDefectDO7 = true;}
+	}else if(val=='ForeignMaterialDefect-DO8'){if(item){this.isForeignMaterialDefectDO8 = false;}else{this.isForeignMaterialDefectDO8 = true;}	
+	}else if(val == 'Polarity-stop'){if(item){this.isPolaritystop = false;}else{this.isPolaritystop = true;}
+	}else if(val=='Polarity-DO1'){if(item){this.isPolarityDO1 = false;}else{this.isPolarityDO1 = true;}
+	}else if(val=='Polarity-DO2'){if(item){this.isPolarityDO2 = false;}else{this.isPolarityDO2 = true;}
+	}else if(val=='Polarity-DO3'){if(item){this.isPolarityDO3 = false;}else{this.isPolarityDO3 = true;}
+	}else if(val=='Polarity-DO4'){if(item){this.isPolarityDO4 = false;}else{this.isPolarityDO4 = true;}
+	}else if(val=='Polarity-DO5'){if(item){this.isPolarityDO5 = false;}else{this.isPolarityDO5 = true;}
+	}else if(val=='Polarity-DO6'){if(item){this.isPolarityDO6 = false;}else{this.isPolarityDO6 = true;}
+	}else if(val=='Polarity-DO7'){if(item){this.isPolarityDO7 = false;}else{this.isPolarityDO7 = true;}
+	}else if(val=='Polarity-DO8'){if(item){this.isPolarityDO8 = false;}else{this.isPolarityDO8 = true;}	
+	}
+	
+		
+	
 		}
-		else if(val == 'SealDefect-stop'){if(item){this.isSealDefectstop = false;}else{this.isSealDefectstop = true;}
-		}else if(val=='SealDefect-DO1'){if(item){this.isSealDefectDO1 = false;}else{this.isSealDefectDO1 = true;}
-		}else if(val=='SealDefect-DO2'){if(item){this.isSealDefectDO2 = false;}else{this.isSealDefectDO2 = true;}
-		}else if(val=='SealDefect-DO3'){if(item){this.isSealDefectDO3 = false;}else{this.isSealDefectDO3 = true;}
-		}else if(val=='SealDefect-DO4'){if(item){this.isSealDefectDO4 = false;}else{this.isSealDefectDO4 = true;}
-		}else if(val=='SealDefect-DO5'){if(item){this.isSealDefectDO5 = false;}else{this.isSealDefectDO5 = true;}
-		}else if(val=='SealDefect-DO6'){if(item){this.isSealDefectDO6 = false;}else{this.isSealDefectDO6 = true;}
-		}else if(val=='SealDefect-DO7'){if(item){this.isSealDefectDO7 = false;}else{this.isSealDefectDO7 = true;}
-		}else if(val=='SealDefect-DO8'){if(item){this.isSealDefectDO8 = false;}else{this.isSealDefectDO8 = true;}	
-		}else if(val == 'ForeignMaterialDefect-stop'){if(item){this.isForeignMaterialDefectstop = false;}else{this.isForeignMaterialDefectstop = true;}
-		}else if(val=='ForeignMaterialDefect-DO1'){if(item){this.isForeignMaterialDefectDO1 = false;}else{this.isForeignMaterialDefectDO1 = true;}
-		}else if(val=='ForeignMaterialDefect-DO2'){if(item){this.isForeignMaterialDefectDO2 = false;}else{this.isForeignMaterialDefectDO2 = true;}
-		}else if(val=='ForeignMaterialDefect-DO3'){if(item){this.isForeignMaterialDefectDO3 = false;}else{this.isForeignMaterialDefectDO3 = true;}
-		}else if(val=='ForeignMaterialDefect-DO4'){if(item){this.isForeignMaterialDefectDO4 = false;}else{this.isForeignMaterialDefectDO4 = true;}
-		}else if(val=='ForeignMaterialDefect-DO5'){if(item){this.isForeignMaterialDefectDO5 = false;}else{this.isForeignMaterialDefectDO5 = true;}
-		}else if(val=='ForeignMaterialDefect-DO6'){if(item){this.isForeignMaterialDefectDO6 = false;}else{this.isForeignMaterialDefectDO6 = true;}
-		}else if(val=='ForeignMaterialDefect-DO7'){if(item){this.isForeignMaterialDefectDO7 = false;}else{this.isForeignMaterialDefectDO7 = true;}
-		}else if(val=='ForeignMaterialDefect-DO8'){if(item){this.isForeignMaterialDefectDO8 = false;}else{this.isForeignMaterialDefectDO8 = true;}	
-		}else if(val == 'Polarity-stop'){if(item){this.isPolaritystop = false;}else{this.isPolaritystop = true;}
-		}else if(val=='Polarity-DO1'){if(item){this.isPolarityDO1 = false;}else{this.isPolarityDO1 = true;}
-		}else if(val=='Polarity-DO2'){if(item){this.isPolarityDO2 = false;}else{this.isPolarityDO2 = true;}
-		}else if(val=='Polarity-DO3'){if(item){this.isPolarityDO3 = false;}else{this.isPolarityDO3 = true;}
-		}else if(val=='Polarity-DO4'){if(item){this.isPolarityDO4 = false;}else{this.isPolarityDO4 = true;}
-		}else if(val=='Polarity-DO5'){if(item){this.isPolarityDO5 = false;}else{this.isPolarityDO5 = true;}
-		}else if(val=='Polarity-DO6'){if(item){this.isPolarityDO6 = false;}else{this.isPolarityDO6 = true;}
-		}else if(val=='Polarity-DO7'){if(item){this.isPolarityDO7 = false;}else{this.isPolarityDO7 = true;}
-		}else if(val=='Polarity-DO8'){if(item){this.isPolarityDO8 = false;}else{this.isPolarityDO8 = true;}	
-		}
-}
+	
 
-	gotoProductList(){
-		this.router.navigate(['/machine/product']);
-	}
-	updateProductDetails(){
-		this.updatedProductObj = 
-			{
-				"number":this.productNumber,
-				"name":this.prodcutName,
-				"productCode":this.productCode,
-				"image": this.imageUrl,
-				"productlength":this.productlength,
-				"inspectionBeltSpeed":this.inspectionBeltSpeed,
-				"rejectorBeltSpeed":this.rejectorBeltSpeed,
-				"tubeVoltage":this.tubeVoltage,
-				"tubeCurrent":this.tubeCurrent,
-				"consecutivefailure":this.consecutivefailure,
-				"consecutiveVariable":this.consecutiveVariable,
-				"minimumSealwidthTop":this.minimumSealwidthTop,
-				"maximumSealwidthTop":this.maximumSealwidthTop,
-				"minimumSealwidthBottom":this.minimumSealwidthBottom,
-				"maximumSealWidthBottom":this.maximumSealWidthBottom,
-				"minimumSealwidthRightSide":this.minimumSealwidthRightSide,
-				"maximimSealwidthRightSide":this.maximimSealwidthRightSide,
-				"minimumSealwidthLeftSide":this.minimumSealwidthLeftSide,
-				"maximumSealwidthLeftSide":this.maximumSealwidthLeftSide
-			}
-		this._mqttService.unsafePublish('grayscale_updateProduct', JSON.stringify(this.updatedProductObj), { qos: 1, retain: false })
-		this.updateProductSubscription = this._mqttService.observe('grayscale_updateProduct').subscribe((message: IMqttMessage) => {
-			let obj = JSON.parse(message.payload.toString());
-			console.log(obj)
-			let res = true;
-			if(res){
-				this.toastr.success('Product updated successfully');
-				this.router.navigate(["/machine/product"]);
-				this.updateProductSubscription.unsubscribe();
-				}else{
-				this.toastr.error('plese try again');
-			}
-	  });
-	}
 }

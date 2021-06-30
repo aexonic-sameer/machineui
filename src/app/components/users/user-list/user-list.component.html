@@ -1,141 +1,120 @@
 
 
 <div class="backgroundLightGray">
-    <div class="row paddingCustom">
-        <div class="col-md-1 col-lg-1  col-sm-1 col-xlg-1">
-          <div class="flexcontenersideBar">
-                <app-side-menu></app-side-menu>
-          </div>
-        </div>
-        <div class="col-md-11 col-lg-11  col-sm-11 col-xlg-11">
+    <div class="row">
+        <div class="col-md-12 col-lg-12  col-sm-12 col-xlg-12">
           <div class="flexcontener backgroundColorWhite">
-             
-<!-- New code -->
-<div class="row " >
-    <div class="col-md-12 col-lg-12" style="padding: 22px 22px 6px 42px;">
-        <span>
-          <strong class="custom_title">User List</strong>
-          </span>
-          <span>
-            <button class="customButtonHeight btn btn-light mr-3 pull-right" (click)="addNewUser();" placement="bottom" ngbTooltip="Click to add new user"><i class="fa fa-plus mr-2"></i>New</button>
-          
-        </span>
-      </div>
-      <hr>
-<div class="col-12">
-   
-    <div class="card">
-        <div class="card-body">
-         
-        
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr class="tableHeadingStyle">
-                            <th class="th_top">ID</th>
-                            <th class="th_top">Name</th>
-                            <th class="th_top">Access Level</th>
-                            <th class="th_top">Action</th>
-                         
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="cursor_pointer">1</td>
-                            <td class="cursor_pointer">Tim Smith</td>
-                            <td class="cursor_pointer">Engineer</td>
-                            
-                            <td class="cursor_pointer">
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
-                                </samp>
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Edit Details">
-                                        <i class="fa fa-edit" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
-                                    </a>
-                                </samp>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cursor_pointer">2</td>
-                            <td class="cursor_pointer">Gina Thomas</td>
-                            <td class="cursor_pointer">QAQC</td>
-                            
-                            <td class="cursor_pointer">
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
-                                </samp>
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Edit Details">
-                                        <i class="fa fa-edit" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
-                                    </a>
-                                </samp>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cursor_pointer">3</td>
-                            <td class="cursor_pointer">Alex</td>
-                            <td class="cursor_pointer">Engineer</td>
-                            
-                            <td class="cursor_pointer">
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
-                                </samp>
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Edit Details">
-                                        <i class="fa fa-edit" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
-                                    </a>
-                                </samp>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cursor_pointer">4</td>
-                            <td class="cursor_pointer">Jack</td>
-                            <td class="cursor_pointer">QAQC</td>
-                            
-                            <td class="cursor_pointer">
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
-                                </samp>
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Edit Details">
-                                        <i class="fa fa-edit" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
-                                    </a>
-                                </samp>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cursor_pointer">5</td>
-                            <td class="cursor_pointer">Sam</td>
-                            <td class="cursor_pointer">QAQC</td>
-                            
-                            <td class="cursor_pointer">
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Delete user"> <i class="fa fa-trash cursor_pointer" style="color:red;font-size: 20px"></i></a>
-                                </samp>
-                                <samp style="cursor: pointer;">
-                                    <a  placement="bottom" ngbTooltip="Edit Details">
-                                        <i class="fa fa-edit" style="color:gray;margin-left: 14px;font-size: 20px;"></i>
-                                    </a>
-                                </samp>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- New code -->
+            <div class="row " >
+                <div class="col-md-12 col-lg-12" style="padding: 22px 22px 6px 42px;">
+                    <span>
+                    <strong class="custom_title">User List</strong>
+                    </span>
+                    <span>
+                        <button class="customButtonHeight btn btn-light mr-3 pull-right" (click)="addNewUser();" placement="bottom" ngbTooltip="Click to add new user"><i class="fa fa-plus mr-2"></i>New</button>
+                    
+                    </span>
+                </div>
+                <hr>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="tableHeadingStyle">
+                                        <th class="th_top">
+                                            <span  class="d-flex justify-content-start align-items-center"> ID
+                                                <span class="d-flex flex-column justify-content-end align-items-center ml-3">
+                                                    <i (click)="SortingAsending('id');" aria-hidden="true" class="fa fa-sort-up font-12 cursor_pointer sortIcon"></i>
+                                                    <i (click)="sortingDsending('id');" aria-hidden="true" class="fa fa-sort-down font-12 cursor_pointer sortIcon"></i>
+                                                </span>
+                                            </span>
+                                        </th>
+                                        <th class="th_top">
+                                            <span  class="d-flex justify-content-start align-items-center"> Name
+                                                <span class="d-flex flex-column justify-content-end align-items-center ml-3">
+                                                    <i (click)="SortingAsending('string');" aria-hidden="true" class="fa fa-sort-up font-12 cursor_pointer sortIcon"></i>
+                                                    <i (click)="sortingDsending('string');"aria-hidden="true" class="fa fa-sort-down font-12 cursor_pointer sortIcon"></i>
+                                                </span>
+                                            </span>
+                                        </th>
+                                        <th class="th_top">
+                                            <span  class="d-flex justify-content-start align-items-center"> Access Level
+                                                <span class="d-flex flex-column justify-content-end align-items-center ml-3">
+                                                    <i (click)="SortingAsending('string');" aria-hidden="true" class="fa fa-sort-up font-12 cursor_pointer sortIcon"></i>
+                                                    <i (click)="sortingDsending('string');" aria-hidden="true" class="fa fa-sort-down font-12 cursor_pointer sortIcon"></i>
+                                                </span>
+                                            </span>
+                                        </th>
+                                        <th class="th_top">Action</th>
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of allUserList">
+                                        <td class="cursor_pointer">{{user.id}}</td>
+                                        <td class="cursor_pointer">{{user.Name}}</td>
+                                        <td class="cursor_pointer">{{user.AccessLevel}}</td>
+                                        
+                                        <td class="cursor_pointer">
+                                            <samp style="cursor: pointer;">
+                                                <a  placement="bottom" (click)="editUser(user);" ngbTooltip="Edit Details">
+                                                    <i class="fa fa-edit" style="color:gray;font-size: 20px;"></i>
+                                                </a>
+                                            </samp>
+                                            <samp style="cursor: pointer;">
+                                                <a  placement="bottom" ngbTooltip="Delete user"> 
+                                                    <i class="fa fa-trash cursor_pointer" (click)="deleteUserModelFunction(userDeleted);StatusFunction(user.id);"  style="color:red;font-size: 20px;margin-left: 14px;"></i>
+                                                </a>
+                                            </samp>
+                                        
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12 col-lg-12 text-center" *ngIf="isLoading">
+                            <img  src="assets/images/loader/Spinner.gif" style="width: 6rem;" alt="loading.." />
+                        </div>
+                    </div>
+                </div>
             </div>
-           
+            </div>
+            <!-- new code end -->
+          </div>
+          </div>
+    </div>
+</div>
+
+<ng-template #userDeleted let-c="close" let-d="dismiss">
+    <div class="modal-header customBackgroundColor">
+        <div>
+            <span class="headersStyle">Delete User</span>
         </div>
+        <button type="button" style="color: #fff;" class="outline_none custom_color_white close mod_close_btn" aria-label="Close" (click)="d('Cross click')">
+             <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-</div>
-</div>
-
-<!-- new code end -->
-
+    <div class="modal-body">
+        <div class="card m_b_0" style="background-color: #eaeaea;">
+          <div class="card-body">
+            <div class="row deleteUserBody">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 py-0">
+                <span class="login_heading modeltextStatus">Do you want to Delete this user?</span>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="row text-center m_18">
+            <div class="col-12">
+              <button type="button" (click)="d('Cross click')" class="btn btn btn-danger">No</button>
+              <button type="button" style="margin-left: 12px; "(click)='userDeleteFunction();'
+                class="btn btn btn-success  background_color">Yes</button>
+            </div>
           </div>
-  
-    </div>
-</div>
+      </div>
+</ng-template>
 
 
 

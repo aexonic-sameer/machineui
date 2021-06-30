@@ -3,11 +3,14 @@
 }
 
 .flexcontenersideBar{
-    margin-top: 70px;
+    /* margin-top: 70px; */
+    position: fixed;
+    left: 16px;
+    top: 62px;
 }
 .flexcontener{
-    margin-top: 70px;
-    height: 89vh;
+    margin-top: 54px;
+    height: auto;
     box-shadow: 0 0px 2px rgb(0 0 0 / 62%);
 }
 .custom_title{
@@ -21,7 +24,9 @@
 }
 
 .backgroundLightGray{
-    background-color: #8080800f;
+    background-color: #ebebeb73;
+    height: auto;
+    padding-bottom: 6px;
 }
 .backgroundColorWhite{
     background-color: #fff;
@@ -29,3 +34,40 @@
 .paddingCustom{
     padding: 1px 22px 1px 6px;
 }
+.card {
+    margin-bottom: 5px !important;
+  }
+  .sortIcon {
+    margin: -6px 0px;
+    position: relative;
+    font-size: 16px;
+}
+.cursor_pointer{
+    cursor: pointer;
+}
+/* delete User Model css start*/
+.customBackgroundColor{
+    background-color: #2d6875;
+}
+.modeltextStatus{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.headersStyle{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+.m_18{
+    margin-top: 18px;
+}
+.m_b_0{
+    margin-bottom: 0px;
+}
+.deleteUserBody{
+    margin: 16px;
+    text-align: center;
+}
+/* delete user model css end */

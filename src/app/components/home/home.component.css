@@ -1,13 +1,12 @@
 .flexcontenersideBar{
-    margin-top: 70px;
-    /* position: fixed;
-    left: 15px;
-    bottom: 8px;
-    top: 60px; */
+    /* margin-top: 70px; */
+    position: fixed;
+    left: 16px;
+    top: 62px;
 }
 .flexcontener{
     margin-top: 70px;
-    height: 89vh;
+    height: 88vh;
     box-shadow: 0 0px 2px rgb(0 0 0 / 62%);
 }
 
@@ -33,7 +32,7 @@ h2{
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 0px 2px rgb(0 0 0 / 62%);
-    margin-top: 14px;
+    margin-top: 10px;
     padding: 6px 15px;
 }
 .headingTextStyle{
@@ -70,6 +69,8 @@ h2{
 }
 .backgroundLightGray{
     background-color: #ebebeb73;
+    height: auto;
+    padding-bottom: 12px;
 }
 .backgroundColorWhite{
     background-color: #fff;
@@ -77,3 +78,7 @@ h2{
 .paddingCustom{
     padding: 1px 22px 1px 6px;
 }
+
+/* new css */
+
+/* new css */

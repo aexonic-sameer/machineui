@@ -306,6 +306,12 @@ label{
 .card {
   margin-bottom: 5px !important;
 }
+.customLable{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}
+
 .digitalOutput{
   padding: 2px 5px;
   width: 100%;

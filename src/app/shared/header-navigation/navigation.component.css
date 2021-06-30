@@ -127,3 +127,62 @@
     background-color: gray;
     color: #fff;
   }
+  .wrapper1{
+    display: flex ;
+    position: relative ;
+  }
+   /* .sidebar1{
+    position: fixed ;
+    width: 200px ;
+    height: 100% ;
+    background-color: #fff ;
+  } */
+  .sidebar1 ul li{
+    padding: 12px 6px;
+
+  }
+  .sidebar1 ul li ul{
+    padding: 6px;
+    margin-left: 8px;
+    font-size: 14px;
+
+  }
+  .sidebar1 ul li ul li{
+    padding: 4px;
+
+  }
+   .sidebar1 ul li a{
+   color: gray ;
+   display: block ;
+  }
+  .sidebar1 ul li a:hover{
+    color: gray ;
+    display: block ;
+    font-weight: 400;
+    
+   }
+   .sidebar1 ul li a .fa{
+      width :25px ;
+      font-size: 24px;
+      margin-right: 1px;
+   }
+
+   .sidebarImageIcon{
+    width: 25px;
+    height: auto;
+    margin-right: 10px;
+   }
+   .cursorPointer{
+    cursor: pointer;
+}
+.tobbartextStyle{
+  font-size: 16px;
+  font-weight: 600;
+}
+.ssdStyle{
+  padding: 6px 31px;
+  background-color: gray;
+  color: #fff;
+}
+
+
