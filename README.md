@@ -1,4 +1,48 @@
 <<<<<<< HEAD
+
+#Angular Setting up the local environment and workspace
+ 
+
+1. Install node in your local system -  v10.15.0
+ 
+
+2. npm install -g @angular/cli  - 11.2.9
+ 
+
+3. Clone project from git - 
+ 
+
+https://github.com/aexonic-sameer/machineui.git
+
+
+4. Open project in VS code
+ 
+
+5. Run command - npm install
+ 
+
+6. ng serve 
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+
+Reference
+
+https://ccbill.com/kb/install-angular-on-windows
+	
+	
+https://angular.io/guide/setup-local
+	
+	
+https://www.freecodecamp.org/news/how-to-install-angular-on-windows-a-guide-to-angular-cli-node-js-and-build-tools/
+
+
+
+
+
+
 # AdminAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
